@@ -50,75 +50,28 @@ Steps:
 
 Notes: salt is important for chocolate depth. Keep guar low: chocolate and cocoa already provide body. If the base looks separated or grainy after aging, re-blend; gently rewarm/reblend only if cold blending does not fix it."""
 
-SOURDOUGH_DESCRIPTION = """Based on Maurizio Leo / The Perfect Loaf Simple Weekday Sourdough Bread, adapted into a flexible workday schedule for two loaves. Moderate 76% hydration, built around an evening levain, morning mix, 4-6 hour room-temperature bulk, overnight fridge proof, and next-day bake.
+SOURDOUGH_DESCRIPTION = """Flexible two-loaf workday sourdough with an evening levain, morning mix, same-day bulk, overnight cold proof, and next-day bake.
 
-Attribution / source:
-- Based on Maurizio Leo, The Perfect Loaf: Simple Weekday Sourdough Bread
-- Source: https://www.theperfectloaf.com/simple-weekday-sourdough-bread/
+Source:
+Maurizio Leo / The Perfect Loaf — Simple Weekday Sourdough Bread
+https://www.theperfectloaf.com/simple-weekday-sourdough-bread/
 
-Baker percentages:
-- Total flour: 900g = 100%
-- Total water: 684g = 76%
-- Salt: 16g = 1.8%
-- Starter inoculation: 16g = 1.8%
-- Levain: 180g total = 20% of flour weight
-- Prefermented flour: 82g = 9.1% of total flour
-- Yield: about 1615g dough, enough for 2 loaves of about 800g each
+Starter maintenance:
+Keep 40g starter in the fridge. When building levain, use 20g starter, then refresh the remaining 20g with 20g flour + 20g water. Rest 30-60 min, then return 40g to the fridge.
 
-Reconciled formula note:
-- The handwritten photo formula was the baseline timing and starter routine.
-- To match the intended moderate 76% hydration target, increase the autolyse water to 552g while keeping the same levain build, final 50g water addition, salt, and timing.
+Schedule + method:
+Evening, day 1 — build levain and leave covered overnight at room temperature.
 
-Starter maintenance for 2 bakes/week:
-1. Keep 40g starter in the fridge.
-2. In the evening before mixing dough, take/use 20g out for the levain.
-3. Refresh the remaining starter: 20g starter + 20g flour + 20g water = 60g.
-4. Let refreshed starter rest at room temperature for 30-60 min.
-5. Put 40g back in the fridge for the next bake. Use/discard the extra 20g as needed.
+Morning, day 2 — autolyse flour and water for 30-60 min. Add ripe levain, reserved water, and salt; mix until incorporated and moderately strengthened.
 
-Formula:
-Levain, evening day 1:
-- 82g bread flour
-- 82g water
-- 16g mature starter
-- Total: 180g levain
+Day 2, bulk fermentation — keep at room temperature for about 4-6 hours total. Do stretch-and-folds during the first half. Continue until the dough is airy, expanded, and lively.
 
-Autolyse, morning day 2:
-- 818g bread flour
-- 552g water
-- Rest 30-60 min
+Day 2, evening — divide into two loaves, preshape, rest 20-30 min, final-shape, place in bannetons, and refrigerate overnight.
 
-Final mix, morning day 2:
-- all 180g ripe levain
-- 50g additional water
-- 16g fine sea salt
+Day 3 — bake from the fridge at about 230°C: 20 min covered/with steam, then 25-35 min uncovered until deep brown. Cool at least 2 hours before slicing.
 
-Schedule / timeline:
-Evening, day 1 — build levain:
-- Mix 82g flour + 82g water + 16g starter = 180g levain.
-- Leave covered at room temperature overnight.
-- By morning it should be active, bubbly, risen, and ready to use.
-
-Morning, day 2 — mix and make dough:
-- Autolyse 818g flour + 552g water for 30-60 min.
-- Add all 180g ripe levain, 50g additional water, and 16g salt.
-- Mix until incorporated and moderately strengthened.
-
-Day 2, room-temperature fermentation:
-- Bulk ferment / proof at room temperature for about 4-6 hours total, depending on room temperature and dough activity.
-- Do stretch-and-folds during the first half of bulk.
-- Continue until the dough is airy, expanded, and lively, not just until the clock says so.
-
-Day 2, evening — divide, shape, and refrigerate:
-- Divide into two loaves of about 800g each.
-- Preshape, bench rest 20-30 min, shape, place in bannetons, then put shaped dough in the fridge.
-
-Day 3 — bake:
-- Bake the following day, straight from the fridge unless a loaf still looks tight/dense.
-- Bake in a hot covered pot or with steam at about 230°C: 20 min covered/with steam, then 25-35 min uncovered until deep brown and about 95°C internal.
-- Cool at least 2 hours before slicing.
-
-Proofing note: if the cold loaf looks tight/dense on bake day, give it 30-60 min at room temperature while the oven preheats. If already puffy/jiggly, bake straight from the fridge."""
+Proofing note:
+If a cold loaf still looks tight/dense on bake day, give it 30-60 min at room temperature while the oven preheats. If already puffy/jiggly, bake straight from the fridge."""
 
 SEED_RECIPES = [
     ("Rich chocolate ice cream", "Ice cream", RICH_CHOCOLATE_DESCRIPTION, "CubeItaly,chocolate,adult,2 batches", "Experiment", "chocolate", ""),
@@ -580,21 +533,18 @@ def render_recipe_card(recipe: sqlite3.Row) -> str:
 
 def render_sourdough_ingredient_table() -> str:
     rows = [
-        ("Starter upkeep", "Fridge starter reserve", "40g", "—", "Keep in fridge between bakes."),
-        ("Starter upkeep", "Starter used for levain", "20g", "—", "Take out in the evening before mixing dough."),
-        ("Starter upkeep", "Refresh: starter + flour + water", "20g + 20g + 20g = 60g", "—", "Rest 30-60 min, then return 40g to fridge."),
-        ("Levain, evening day 1", "Bread flour", "82g", "9.1%", "Prefermented flour."),
-        ("Levain, evening day 1", "Water", "82g", "9.1%", "Equal weight to levain flour."),
-        ("Levain, evening day 1", "Mature starter", "16g", "1.8%", "Seeds the levain; leave overnight."),
-        ("Levain, evening day 1", "Levain subtotal", "180g", "20%", "Use all of it in the final dough next morning."),
-        ("Autolyse, morning day 2", "Bread flour", "818g", "90.9%", "Main flour addition."),
-        ("Autolyse, morning day 2", "Water", "552g", "61.3%", "Adjusted so total dough hydration is 76%."),
-        ("Final mix, morning day 2", "Ripe levain", "180g", "20%", "Add after autolyse."),
-        ("Final mix, morning day 2", "Additional water", "50g", "5.6%", "Hold back/add during final mix."),
-        ("Final mix, morning day 2", "Fine sea salt", "16g", "1.8%", "Add during final mix."),
-        ("Total formula", "Total flour", "900g", "100%", "82g levain flour + 818g autolyse flour."),
-        ("Total formula", "Total water", "684g", "76%", "82g levain water + 552g autolyse water + 50g final water."),
-        ("Total formula", "Total dough", "~1616g", "—", "Divide into two loaves of about 808g each."),
+        ("Levain", "Bread flour", "82g", "9.1%", "Prefermented flour."),
+        ("Levain", "Water", "82g", "9.1%", "Equal weight to levain flour."),
+        ("Levain", "Mature starter", "16g", "1.8%", "Seeds the levain."),
+        ("Levain", "Levain subtotal", "180g", "20%", "Use all in final dough."),
+        ("Autolyse", "Bread flour", "818g", "90.9%", "Main flour addition."),
+        ("Autolyse", "Water", "552g", "61.3%", "Main water addition."),
+        ("Final mix", "Ripe levain", "180g", "20%", "Add after autolyse."),
+        ("Final mix", "Reserved water", "50g", "5.6%", "Add with levain/salt."),
+        ("Final mix", "Fine sea salt", "16g", "1.8%", "Add during final mix."),
+        ("Total formula", "Total flour", "900g", "100%", "Levain flour + main flour."),
+        ("Total formula", "Total water", "684g", "76%", "Levain water + main water + reserved water."),
+        ("Total formula", "Total dough", "~1616g", "—", "Two loaves of about 808g each."),
     ]
     body = "".join(
         "<tr>"
@@ -739,17 +689,20 @@ def recipe_detail_page(username: str, recipe: sqlite3.Row) -> bytes:
     summary_plain = str(recipe["summary"] or "").strip()
     hero_summary_plain = intro_text(summary_plain, 260)
     full_description = ""
-    if summary_plain and normalized_text(summary_plain) != normalized_text(hero_summary_plain):
+    description_body = summary_plain
+    if is_sourdough and "\n\n" in summary_plain:
+        description_body = summary_plain.split("\n\n", 1)[1].strip()
+    if description_body and normalized_text(description_body) != normalized_text(hero_summary_plain):
         full_description = f"""
         <article class="detail-panel">
-          <h2>Full description</h2>
-          <p>{esc(summary_plain)}</p>
+          <h2>{'Schedule / method' if is_sourdough else 'Full description'}</h2>
+          <p>{esc(description_body)}</p>
         </article>"""
     hero_summary_html = ""
-    if not full_description:
+    if is_sourdough or not full_description:
         hero_summary = esc(hero_summary_plain) or "No short description recorded yet."
         hero_summary_html = f'<p class="detail-summary">{hero_summary}</p>'
-    grid_class = " single" if (is_sourdough or not full_description) else ""
+    grid_class = "" if full_description else " single"
     color = esc(recipe["color"])
     photo = esc(recipe["cover_photo"] if "cover_photo" in recipe.keys() else "")
     detail_photo = f'<div class="detail-photo thumb photo-thumb"><img src="{photo}" alt="{esc(recipe["title"])} photo" /></div>' if photo else f'<div class="detail-photo thumb {color}"></div>'
