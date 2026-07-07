@@ -11,9 +11,11 @@ from __future__ import annotations
 import hashlib
 import hmac
 import html
+import mimetypes
 import os
 import sqlite3
 import time
+import uuid
 from datetime import datetime, timezone
 from http.cookies import SimpleCookie
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
@@ -22,6 +24,7 @@ from urllib.parse import parse_qs, urlparse
 
 ROOT = Path(__file__).resolve().parent
 DB_PATH = Path(os.environ.get("HOME_RECIPES_DB", ROOT / "data" / "home_recipes.sqlite3"))
+UPLOAD_DIR = Path(os.environ.get("HOME_RECIPES_UPLOAD_DIR", DB_PATH.parent / "uploads"))
 PORT = int(os.environ.get("PORT", "8000"))
 SESSION_SECRET = os.environ.get("HOME_RECIPES_SESSION_SECRET", "dev-home-recipes-session-secret-change-me")
 SESSION_MAX_AGE = 60 * 60 * 24 * 30
@@ -131,7 +134,7 @@ h1{margin:18px 0 14px;font-family:var(--display);font-weight:800;font-size:clamp
 .toolbar{display:flex;justify-content:space-between;align-items:center;padding:6px 4px 12px}.dots{display:flex;gap:6px}.dots span{width:9px;height:9px;border-radius:50%;background:#e2d8cc}.status{color:var(--soft);font-size:13px;font-weight:650}
 .section{padding:30px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:16px}.section h2{margin:0;font-family:var(--display);font-weight:800;font-size:clamp(28px,3.2vw,40px);line-height:1.08;letter-spacing:-.035em;color:var(--ink);text-wrap:balance}.section .sub{color:var(--muted);max-width:570px;line-height:1.6;text-wrap:pretty}
 .library-tools{display:grid;grid-template-columns:1fr auto;gap:12px;margin:0 0 18px}.search{border:1px solid var(--line);background:#fff;border-radius:12px;padding:13px 14px;font:inherit;color:var(--ink)}.search::placeholder,input::placeholder,textarea::placeholder{color:#aaa49b}.filter-note{align-self:center;color:var(--muted);font-size:14px}.library-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.recipe-card{overflow:hidden;border:1px solid var(--line);border-radius:16px;background:#fff;box-shadow:none;transition:border-color .15s,transform .15s,box-shadow .15s}.recipe-card:hover{transform:translateY(-1px);box-shadow:var(--shadow);border-color:#ded4c7}.recipe-card.add-card{display:grid;place-items:center;min-height:286px;border-style:dashed;background:var(--paper-soft)}.add-card-inner{text-align:center;padding:24px}.plus{width:44px;height:44px;border-radius:12px;background:var(--accent);color:white;display:grid;place-items:center;margin:0 auto 14px;font-size:24px}
-.thumb{height:118px;background:linear-gradient(135deg,#f5e9db,#fbf5e9);position:relative;border-bottom:1px solid var(--line)}.thumb:after{content:"";position:absolute;inset:26px 58px;border-radius:999px;background:#fff8eb;box-shadow:0 8px 18px rgba(64,42,24,.08)}.thumb:before{content:"";position:absolute;left:20px;bottom:16px;width:54px;height:8px;border-radius:999px;background:rgba(255,255,255,.55)}.thumb.chocolate{background:linear-gradient(135deg,#493229,#a96b50)}.thumb.pistachio{background:linear-gradient(135deg,#7d9a6d,#e8dfb7)}.thumb.banana{background:linear-gradient(135deg,#e3c95d,#fff0b5)}.thumb.yogurt{background:linear-gradient(135deg,#d5e2e4,#fffaf0)}
+.thumb{height:118px;background:linear-gradient(135deg,#f5e9db,#fbf5e9);position:relative;border-bottom:1px solid var(--line)}.thumb:after{content:"";position:absolute;inset:26px 58px;border-radius:999px;background:#fff8eb;box-shadow:0 8px 18px rgba(64,42,24,.08)}.thumb:before{content:"";position:absolute;left:20px;bottom:16px;width:54px;height:8px;border-radius:999px;background:rgba(255,255,255,.55)}.thumb.chocolate{background:linear-gradient(135deg,#493229,#a96b50)}.thumb.pistachio{background:linear-gradient(135deg,#7d9a6d,#e8dfb7)}.thumb.banana{background:linear-gradient(135deg,#e3c95d,#fff0b5)}.thumb.yogurt{background:linear-gradient(135deg,#d5e2e4,#fffaf0)}.photo-thumb{padding:0;background:#f7f3ec}.photo-thumb img{display:block;width:100%;height:118px;object-fit:cover}.detail-photo.photo-thumb img{height:100%;min-height:220px}.photo-note{margin:4px 0 0;color:var(--soft);font-size:12px;line-height:1.4}
 .recipe-card-body{padding:16px}.recipe-card h3{margin:0 0 8px;font-family:var(--display);font-size:20px;line-height:1.2;letter-spacing:-.025em;color:var(--ink);text-wrap:balance}.recipe-card p{margin:0 0 13px;color:var(--muted);line-height:1.5;font-size:14.5px}.ingredient-list{list-style:none;margin:0 0 14px;padding:10px 0 0;border-top:1px solid var(--line);display:grid;gap:6px}.ingredient-list li{font-size:13px;line-height:1.35;color:#4b514c;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.ingredient-list .more{color:var(--soft);font-weight:700}.card-meta{display:flex;flex-wrap:wrap;gap:6px}.mini-pill{padding:5px 8px;border-radius:999px;background:var(--sage-soft);color:var(--sage);font-size:11.5px;font-weight:750;letter-spacing:.005em}
 .ingredient-shelf{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.product-card{border:1px solid var(--line);border-radius:16px;background:#fff;padding:16px}.product-kind{display:inline-block;margin-bottom:16px;color:var(--accent-dark);font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.08em}.product-card h3{margin:0 0 8px;color:var(--ink);font-family:var(--display);font-size:19px;line-height:1.22;letter-spacing:-.025em}.product-card p{margin:0 0 14px;color:var(--muted);font-size:14px;line-height:1.48}
 .form-card{border:1px solid var(--line);border-radius:18px;background:#fff;box-shadow:none;padding:20px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}label{display:grid;gap:7px;color:#5f635e;font-size:13px;font-weight:750}input,textarea,select{width:100%;border:1px solid var(--line);background:#fff;border-radius:10px;padding:12px 13px;font:inherit;font-weight:480;color:var(--ink);outline:none}input:focus,textarea:focus,select:focus{border-color:#d7a18f;box-shadow:0 0 0 3px rgba(214,111,85,.13)}textarea{min-height:94px;resize:vertical}.full{grid-column:1/-1}.notice{margin:14px 0 0;color:var(--accent-dark);font-weight:720}
@@ -174,6 +177,7 @@ def init_db() -> None:
               status TEXT NOT NULL DEFAULT 'Experiment',
               color TEXT NOT NULL DEFAULT '',
               rating TEXT NOT NULL DEFAULT '',
+              cover_photo TEXT NOT NULL DEFAULT '',
               created_at TEXT NOT NULL,
               updated_at TEXT NOT NULL
             )
@@ -182,6 +186,8 @@ def init_db() -> None:
         existing_cols = {row[1] for row in con.execute("PRAGMA table_info(recipes)")}
         if "ingredients" not in existing_cols:
             con.execute("ALTER TABLE recipes ADD COLUMN ingredients TEXT NOT NULL DEFAULT ''")
+        if "cover_photo" not in existing_cols:
+            con.execute("ALTER TABLE recipes ADD COLUMN cover_photo TEXT NOT NULL DEFAULT ''")
 
         con.execute(
             """
@@ -313,27 +319,48 @@ def create_recipe(fields: dict[str, str]) -> str | None:
     return None
 
 
-def update_recipe(recipe_id: int, fields: dict[str, str]) -> str | None:
+def update_recipe(recipe_id: int, fields: dict[str, str], cover_photo: str = "") -> str | None:
     values = recipe_fields(fields)
     if isinstance(values, str):
         return values
     title, category, summary, ingredients, tags, status, color, rating = values
     now = datetime.now(timezone.utc).isoformat()
+    photo_sql = ", cover_photo = ?" if cover_photo else ""
+    params = [title, category, summary, ingredients, tags, status, color, rating, now]
+    if cover_photo:
+        params.append(cover_photo)
+    params.append(recipe_id)
     try:
         with connect() as con:
             cur = con.execute(
-                """
+                f"""
                 UPDATE recipes
-                SET title = ?, category = ?, summary = ?, ingredients = ?, tags = ?, status = ?, color = ?, rating = ?, updated_at = ?
+                SET title = ?, category = ?, summary = ?, ingredients = ?, tags = ?, status = ?, color = ?, rating = ?, updated_at = ?{photo_sql}
                 WHERE id = ?
                 """,
-                (title, category, summary, ingredients, tags, status, color, rating, now, recipe_id),
+                params,
             )
             if cur.rowcount == 0:
                 return "Recipe not found."
     except sqlite3.IntegrityError:
         return "A recipe with that title already exists."
     return None
+
+
+def save_recipe_photo(file_item) -> str:
+    if not file_item or not getattr(file_item, "filename", ""):
+        return ""
+    content_type = (getattr(file_item, "type", "") or "").lower()
+    allowed = {"image/jpeg": ".jpg", "image/png": ".png", "image/webp": ".webp", "image/gif": ".gif"}
+    suffix = allowed.get(content_type)
+    if not suffix:
+        original = Path(file_item.filename).suffix.lower()
+        suffix = original if original in {".jpg", ".jpeg", ".png", ".webp", ".gif"} else ".jpg"
+    UPLOAD_DIR.mkdir(parents=True, exist_ok=True)
+    filename = f"recipe-{uuid.uuid4().hex}{suffix}"
+    target = UPLOAD_DIR / filename
+    target.write_bytes(file_item.data)
+    return f"/uploads/{filename}"
 
 
 def preview_text(value: object, limit: int = 180) -> str:
@@ -356,10 +383,12 @@ def render_recipe_card(recipe: sqlite3.Row) -> str:
         more = f"<li class='more'>+{len(ingredient_lines) - 3} more</li>" if len(ingredient_lines) > 3 else ""
         ingredient_html = f"<ul class='ingredient-list'>{items}{more}</ul>"
     color = esc(recipe["color"])
+    photo = esc(recipe["cover_photo"] if "cover_photo" in recipe.keys() else "")
+    thumb_html = f'<div class="thumb photo-thumb"><img src="{photo}" alt="{esc(recipe["title"])} photo" loading="lazy" /></div>' if photo else f'<div class="thumb {color}"></div>'
     searchable = esc(" ".join([recipe["title"], recipe["category"], recipe["summary"], recipe["ingredients"], recipe["tags"], recipe["status"]]).lower())
     return f"""
       <a class="recipe-card" href="/recipes/{recipe['id']}" data-recipe-card data-search="{searchable}">
-        <div class="thumb {color}"></div>
+        {thumb_html}
         <div class="recipe-card-body">
           <h3>{esc(recipe['title'])}</h3>
           <p>{esc(preview_text(recipe['summary'])) or 'No notes yet. Add the first result next.'}</p>
@@ -381,6 +410,8 @@ def recipe_detail_page(username: str, recipe: sqlite3.Row) -> bytes:
     summary = esc(recipe["summary"]) or "No full description recorded yet."
     hero_summary = esc(preview_text(recipe["summary"], 320)) or "No full description recorded yet."
     color = esc(recipe["color"])
+    photo = esc(recipe["cover_photo"] if "cover_photo" in recipe.keys() else "")
+    detail_photo = f'<div class="detail-photo thumb photo-thumb"><img src="{photo}" alt="{esc(recipe["title"])} photo" /></div>' if photo else f'<div class="detail-photo thumb {color}"></div>'
     html_doc = f"""<!doctype html>
 <html lang="en">
 <head>
@@ -404,7 +435,7 @@ def recipe_detail_page(username: str, recipe: sqlite3.Row) -> bytes:
           <p class="detail-summary">{hero_summary}</p>
           <div class="actions"><a class="button primary" href="/recipes/{recipe['id']}/edit">Edit recipe</a><a class="button secondary" href="/#library">Back to library</a></div>
         </div>
-        <div class="detail-photo thumb {color}"></div>
+        {detail_photo}
       </div>
       <div class="detail-grid">
         <article class="detail-panel">
@@ -450,7 +481,7 @@ def edit_recipe_page(username: str, recipe: sqlite3.Row, message: str = "") -> b
     <section class="section">
       <a class="back-link" href="/recipes/{recipe['id']}">← Back to recipe</a>
       <div class="section-head"><h2>Edit recipe.</h2><p class="sub">Update the family recipe description, ingredients, rating, and status.</p></div>
-      <form class="form-card" method="post" action="/recipes/{recipe['id']}/edit">
+      <form class="form-card" method="post" action="/recipes/{recipe['id']}/edit" enctype="multipart/form-data">
         <div class="form-grid">
           <label>Title<input name="title" required value="{esc(recipe['title'])}" /></label>
           <label>Category<input name="category" value="{esc(recipe['category'])}" /></label>
@@ -460,6 +491,7 @@ def edit_recipe_page(username: str, recipe: sqlite3.Row, message: str = "") -> b
           <label>Status<select name="status">{status_options}</select></label>
           <label>Rating<input name="rating" value="{esc(recipe['rating'])}" /></label>
           <label>Color<select name="color">{color_options}</select></label>
+          <label class="full">Recipe photo<input name="cover_photo" type="file" accept="image/*" /><span class="photo-note">Optional: upload or replace the recipe cover photo.</span></label>
         </div>
         <div class="actions"><button class="primary" type="submit">Save changes</button><a class="button secondary" href="/recipes/{recipe['id']}">Cancel</a></div>
         {notice}
@@ -629,6 +661,13 @@ def parse_recipe_path(path: str) -> tuple[int, str] | None:
     return None
 
 
+class UploadedFile:
+    def __init__(self, filename: str, content_type: str, data: bytes) -> None:
+        self.filename = filename
+        self.type = content_type
+        self.data = data
+
+
 class Handler(BaseHTTPRequestHandler):
     def send_html(self, body: bytes, status: int = 200, extra_headers: dict[str, str] | None = None, include_body: bool = True) -> None:
         self.send_response(status)
@@ -689,6 +728,22 @@ class Handler(BaseHTTPRequestHandler):
         if parsed.path == "/logout":
             self.redirect("/login", {"Set-Cookie": clear_session_cookie()})
             return
+        if parsed.path.startswith("/uploads/"):
+            username = self.require_user()
+            if not username:
+                return
+            name = Path(parsed.path).name
+            target = UPLOAD_DIR / name
+            if not target.exists() or not target.is_file():
+                self.send_error(404)
+                return
+            data = target.read_bytes()
+            self.send_response(200)
+            self.send_header("Content-Type", mimetypes.guess_type(target.name)[0] or "application/octet-stream")
+            self.send_header("Content-Length", str(len(data)))
+            self.end_headers()
+            self.wfile.write(data)
+            return
         username = self.require_user()
         if not username:
             return
@@ -707,13 +762,51 @@ class Handler(BaseHTTPRequestHandler):
             return
         self.send_html(page(username))
 
-    def do_POST(self) -> None:  # noqa: N802
-        parsed = urlparse(self.path)
+    def read_urlencoded_fields(self) -> dict[str, str]:
         length = int(self.headers.get("Content-Length", "0"))
         raw = self.rfile.read(length).decode("utf-8", errors="replace")
-        fields = {k: v[0] for k, v in parse_qs(raw, keep_blank_values=True).items()}
+        return {k: v[0] for k, v in parse_qs(raw, keep_blank_values=True).items()}
+
+    def read_multipart_fields(self):
+        content_type = self.headers.get("Content-Type", "")
+        marker = "boundary="
+        if marker not in content_type:
+            return {}, {}
+        boundary = content_type.split(marker, 1)[1].strip().strip('"').encode()
+        length = int(self.headers.get("Content-Length", "0"))
+        raw = self.rfile.read(length)
+        fields: dict[str, str] = {}
+        files = {}
+        for part in raw.split(b"--" + boundary):
+            part = part.strip(b"\r\n")
+            if not part or part == b"--" or b"\r\n\r\n" not in part:
+                continue
+            header_raw, body = part.split(b"\r\n\r\n", 1)
+            body = body.rstrip(b"\r\n")
+            headers = header_raw.decode("utf-8", errors="replace").split("\r\n")
+            disposition = next((h for h in headers if h.lower().startswith("content-disposition:")), "")
+            content_type_header = next((h for h in headers if h.lower().startswith("content-type:")), "")
+            attrs = {}
+            for chunk in disposition.split(";"):
+                if "=" in chunk:
+                    key, value = chunk.strip().split("=", 1)
+                    attrs[key.lower()] = value.strip().strip('"')
+            name = attrs.get("name", "")
+            filename = attrs.get("filename", "")
+            if not name:
+                continue
+            if filename:
+                file_type = content_type_header.split(":", 1)[1].strip() if ":" in content_type_header else "application/octet-stream"
+                files[name] = UploadedFile(filename, file_type, body)
+            else:
+                fields[name] = body.decode("utf-8", errors="replace")
+        return fields, files
+
+    def do_POST(self) -> None:  # noqa: N802
+        parsed = urlparse(self.path)
 
         if parsed.path == "/login":
+            fields = self.read_urlencoded_fields()
             username = authenticate(fields)
             if not username:
                 self.send_html(login_page("Invalid username or password."), status=401)
@@ -727,7 +820,14 @@ class Handler(BaseHTTPRequestHandler):
         recipe_route = parse_recipe_path(parsed.path)
         if recipe_route and recipe_route[1] == "edit":
             recipe_id = recipe_route[0]
-            error = update_recipe(recipe_id, fields)
+            content_type = self.headers.get("Content-Type", "")
+            if content_type.startswith("multipart/form-data"):
+                fields, files = self.read_multipart_fields()
+                cover_photo = save_recipe_photo(files.get("cover_photo"))
+            else:
+                fields = self.read_urlencoded_fields()
+                cover_photo = ""
+            error = update_recipe(recipe_id, fields, cover_photo)
             if error:
                 recipe = get_recipe(recipe_id)
                 if not recipe:
@@ -740,6 +840,7 @@ class Handler(BaseHTTPRequestHandler):
         if parsed.path != "/recipes":
             self.send_error(404)
             return
+        fields = self.read_urlencoded_fields()
         error = create_recipe(fields)
         if error:
             self.send_html(page(username, error), status=400)
