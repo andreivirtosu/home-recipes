@@ -492,7 +492,6 @@ def recipe_detail_page(username: str, recipe: sqlite3.Row) -> bytes:
     ingredient_html = "".join(f"<li>{esc(line)}</li>" for line in ingredient_lines) or "<li>No ingredients recorded yet.</li>"
     summary_plain = str(recipe["summary"] or "").strip()
     hero_summary_plain = intro_text(summary_plain, 260)
-    hero_summary = esc(hero_summary_plain) or "No short description recorded yet."
     full_description = ""
     if summary_plain and normalized_text(summary_plain) != normalized_text(hero_summary_plain):
         full_description = f"""
@@ -500,6 +499,10 @@ def recipe_detail_page(username: str, recipe: sqlite3.Row) -> bytes:
           <h2>Full description</h2>
           <p>{esc(summary_plain)}</p>
         </article>"""
+    hero_summary_html = ""
+    if not full_description:
+        hero_summary = esc(hero_summary_plain) or "No short description recorded yet."
+        hero_summary_html = f'<p class="detail-summary">{hero_summary}</p>'
     grid_class = "" if full_description else " single"
     color = esc(recipe["color"])
     photo = esc(recipe["cover_photo"] if "cover_photo" in recipe.keys() else "")
@@ -524,7 +527,7 @@ def recipe_detail_page(username: str, recipe: sqlite3.Row) -> bytes:
         <div>
           <div class="card-meta">{pill_html}</div>
           <h1>{esc(recipe['title'])}</h1>
-          <p class="detail-summary">{hero_summary}</p>
+          {hero_summary_html}
           <div class="actions"><a class="button primary" href="/recipes/{recipe['id']}/edit">Edit recipe</a><a class="button secondary" href="/#library">Back to library</a></div>
         </div>
         {detail_photo}
