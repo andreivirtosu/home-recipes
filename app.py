@@ -375,12 +375,26 @@ def init_db() -> None:
                 (
                     sourdough["id"],
                     "10% whole wheat",
-                    "Replace 90g of total flour with whole wheat while keeping the base process.",
-                    "Start at the base 76% hydration; add 10-20g extra water if the dough feels tight.",
+                    "",
+                    "",
                     "Total flour 900g = 810g bread flour + 90g whole wheat flour\nTotal water 684g baseline\nSalt 16g\nLevain unchanged",
-                    "Watch fermentation speed and crumb openness; whole wheat may ferment faster and absorb more water.",
+                    "",
                     now,
                     now,
+                ),
+            )
+            con.execute(
+                """
+                UPDATE recipe_variations
+                SET summary = '', formula_notes = '',
+                    ingredient_overrides = ?, target_notes = '', updated_at = ?
+                WHERE recipe_id = ? AND name = ?
+                """,
+                (
+                    "Total flour 900g = 810g bread flour + 90g whole wheat flour\nTotal water 684g baseline\nSalt 16g\nLevain unchanged",
+                    now,
+                    sourdough["id"],
+                    "10% whole wheat",
                 ),
             )
 
@@ -572,10 +586,9 @@ def create_variation(recipe_id: int, fields: dict[str, str]) -> str | None:
     name = fields.get("name", "").strip()
     if not name:
         return "Variation name is required."
-    summary = fields.get("summary", "").strip()
-    formula_notes = fields.get("formula_notes", "").strip()
     ingredient_overrides = fields.get("ingredient_overrides", "").strip()
-    target_notes = fields.get("target_notes", "").strip()
+    if not ingredient_overrides:
+        return "Ingredient list is required."
     now = datetime.now(timezone.utc).isoformat()
     try:
         with connect() as con:
@@ -587,7 +600,7 @@ def create_variation(recipe_id: int, fields: dict[str, str]) -> str | None:
                 (recipe_id, name, summary, formula_notes, ingredient_overrides, target_notes, created_at, updated_at)
                 VALUES (?, ?, ?, ?, ?, ?, ?, ?)
                 """,
-                (recipe_id, name, summary, formula_notes, ingredient_overrides, target_notes, now, now),
+                (recipe_id, name, "", "", ingredient_overrides, "", now, now),
             )
             con.execute("UPDATE recipes SET updated_at = ? WHERE id = ?", (now, recipe_id))
     except sqlite3.IntegrityError:
@@ -812,37 +825,29 @@ def render_variations_section(recipe: sqlite3.Row, variations: list[sqlite3.Row]
     if variations:
         cards = []
         for variation in variations:
-            summary = f'<p>{esc(variation["summary"])}</p>' if variation["summary"] else ""
-            formula = f'<div><strong>Formula notes</strong><p>{esc(variation["formula_notes"])}</p></div>' if variation["formula_notes"] else ""
-            overrides = f'<div><strong>Ingredient overrides</strong>{textarea_lines(variation["ingredient_overrides"])}</div>' if variation["ingredient_overrides"] else ""
-            target = f'<div><strong>Target / watch-outs</strong><p>{esc(variation["target_notes"])}</p></div>' if variation["target_notes"] else ""
+            ingredients = textarea_lines(variation["ingredient_overrides"]) or '<p>No ingredient list recorded yet.</p>'
             cards.append(
                 f"""
                 <article class="note-card">
                   <div class="card-meta"><span class="mini-pill">Variation</span></div>
                   <h3>{esc(variation['name'])}</h3>
-                  {summary}
-                  {formula}
-                  {overrides}
-                  {target}
+                  <strong>Ingredients</strong>
+                  {ingredients}
                 </article>"""
             )
         cards_html = "".join(cards)
     else:
-        cards_html = '<p class="empty-note">No variations yet. Add the first one when you change flour, hydration, timing, or process.</p>'
+        cards_html = '<p class="empty-note">No variations yet. Add the first ingredient-list variation when you change flour, hydration, or products.</p>'
     return f"""
         <article class="detail-panel full-width">
           <h2>Variations</h2>
-          <p class="panel-sub">Child formulas that stay attached to this recipe, such as 10% whole wheat or higher hydration.</p>
+          <p class="panel-sub">Only list ingredients that define the variation; base method and notes stay in the main recipe.</p>
           <div class="note-grid">{cards_html}</div>
           <form class="inline-form" method="post" action="/recipes/{recipe['id']}/variations">
             <h3>Add variation</h3>
             <div class="form-grid">
               <label>Name<input name="name" required placeholder="e.g. 10% whole wheat" /></label>
-              <label>Summary<input name="summary" placeholder="What changes from the base recipe?" /></label>
-              <label class="full">Formula notes<textarea name="formula_notes" placeholder="Hydration, baker %, timing changes..."></textarea></label>
-              <label class="full">Ingredient overrides<textarea name="ingredient_overrides" placeholder="Total flour 900g = 810g bread flour + 90g whole wheat flour"></textarea></label>
-              <label class="full">Target / watch-outs<textarea name="target_notes" placeholder="What result are you testing, and what should you watch?"></textarea></label>
+              <label class="full">Ingredients list<textarea name="ingredient_overrides" required placeholder="Total flour 900g = 810g bread flour + 90g whole wheat flour&#10;Total water 684g&#10;Salt 16g"></textarea></label>
             </div>
             <div class="actions"><button class="primary" type="submit">Save variation</button></div>
           </form>
