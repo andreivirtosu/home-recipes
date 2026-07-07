@@ -2,12 +2,26 @@
 
 A polished personal recipe lab for recipes, batches, photos, and results.
 
-MVP direction:
+Current MVP:
 
-- Keep a clean current-best recipe.
-- Log every batch/result separately.
-- Attach photos to recipes and batches.
-- Track ratings, texture, sweetness, flavour, family verdict, and next tweak.
-- Later: SQLite, uploads, scaling, variants, and "promote batch to current recipe".
+- Python standard-library web app in `app.py`.
+- SQLite persistence at `data/home_recipes.sqlite3` by default.
+- Seeded recipe library from the existing Obsidian ice-cream notes.
+- Add-recipe form that persists new recipes.
+- Static `index.html` kept as the original visual prototype.
 
-Current version is a static landing page in `index.html`.
+Run locally:
+
+```bash
+PORT=8000 python3 app.py
+```
+
+Open http://127.0.0.1:8000.
+
+Planned next slices:
+
+- Recipe detail pages with ingredients and steps.
+- Batch/result logging per recipe.
+- Photo uploads for recipes and batches.
+- Promote a successful batch to the current best recipe.
+- Import/sync from existing Obsidian notes.
