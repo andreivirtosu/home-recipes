@@ -50,16 +50,24 @@ Steps:
 
 Notes: salt is important for chocolate depth. Keep guar low: chocolate and cocoa already provide body. If the base looks separated or grainy after aging, re-blend; gently rewarm/reblend only if cold blending does not fix it."""
 
-SOURDOUGH_DESCRIPTION = """Family sourdough bread formula from the handwritten notes, kept as the current normal recipe. Inspired by The Perfect Loaf simple weekday method, but using the handwritten 40g fridge-starter routine and 70% hydration bake formula.
+SOURDOUGH_DESCRIPTION = """Based on Maurizio Leo / The Perfect Loaf Simple Weekday Sourdough Bread, adapted into a flexible workday schedule for two loaves. Moderate 76% hydration, built around an evening levain, morning mix, 4-6 hour room-temperature bulk, overnight fridge proof, and next-day bake.
+
+Attribution / source:
+- Based on Maurizio Leo, The Perfect Loaf: Simple Weekday Sourdough Bread
+- Source: https://www.theperfectloaf.com/simple-weekday-sourdough-bread/
 
 Baker percentages:
 - Total flour: 900g = 100%
-- Total water: 630g = 70%
+- Total water: 684g = 76%
 - Salt: 16g = 1.8%
 - Starter inoculation: 16g = 1.8%
 - Levain: 180g total = 20% of flour weight
 - Prefermented flour: 82g = 9.1% of total flour
-- Total dough: about 1560g, close to the handwritten ~1554g note depending on starter rounding
+- Yield: about 1615g dough, enough for 2 loaves of about 800g each
+
+Reconciled formula note:
+- The handwritten photo formula was the baseline timing and starter routine.
+- To match the intended moderate 76% hydration target, increase the autolyse water to 552g while keeping the same levain build, final 50g water addition, salt, and timing.
 
 Starter maintenance for 2 bakes/week:
 1. Keep 40g starter in the fridge.
@@ -68,6 +76,23 @@ Starter maintenance for 2 bakes/week:
 4. Let refreshed starter rest at room temperature for 30-60 min.
 5. Put 40g back in the fridge for the next bake. Use/discard the extra 20g as needed.
 
+Formula:
+Levain, evening day 1:
+- 82g bread flour
+- 82g water
+- 16g mature starter
+- Total: 180g levain
+
+Autolyse, morning day 2:
+- 818g bread flour
+- 552g water
+- Rest 30-60 min
+
+Final mix, morning day 2:
+- all 180g ripe levain
+- 50g additional water
+- 16g fine sea salt
+
 Schedule / timeline:
 Evening, day 1 — build levain:
 - Mix 82g flour + 82g water + 16g starter = 180g levain.
@@ -75,7 +100,7 @@ Evening, day 1 — build levain:
 - By morning it should be active, bubbly, risen, and ready to use.
 
 Morning, day 2 — mix and make dough:
-- Autolyse 818g flour + 490g water for 30-60 min.
+- Autolyse 818g flour + 552g water for 30-60 min.
 - Add all 180g ripe levain, 50g additional water, and 16g salt.
 - Mix until incorporated and moderately strengthened.
 
@@ -84,21 +109,14 @@ Day 2, room-temperature fermentation:
 - Do stretch-and-folds during the first half of bulk.
 - Continue until the dough is airy, expanded, and lively, not just until the clock says so.
 
-Day 2, evening — shape and refrigerate:
-- Divide/preshape if making two smaller loaves, or keep as one large loaf if your basket/oven can handle it.
-- Bench rest 20-30 min, shape, place in banneton, then put shaped dough in the fridge.
+Day 2, evening — divide, shape, and refrigerate:
+- Divide into two loaves of about 800g each.
+- Preshape, bench rest 20-30 min, shape, place in bannetons, then put shaped dough in the fridge.
 
 Day 3 — bake:
-- Bake the following day, straight from the fridge unless it still looks tight/dense.
+- Bake the following day, straight from the fridge unless a loaf still looks tight/dense.
 - Bake in a hot covered pot or with steam at about 230°C: 20 min covered/with steam, then 25-35 min uncovered until deep brown and about 95°C internal.
 - Cool at least 2 hours before slicing.
-
-Method notes:
-1. Build the levain in the evening and leave it overnight; use it in the morning when active.
-2. Mix/make the dough in the morning.
-3. Expect about 4-6 hours room-temperature bulk/proof before shaping and refrigerating.
-4. Cold proof the shaped dough until the next day.
-5. Bake the following day.
 
 Proofing note: if the cold loaf looks tight/dense on bake day, give it 30-60 min at room temperature while the oven preheats. If already puffy/jiggly, bake straight from the fridge."""
 
@@ -108,7 +126,77 @@ SEED_RECIPES = [
     ("Pistachio Sicilian-style gelato", "Gelato", "The flagship iteration target: clean formula, batch notes, and next tweaks.", "CubeItaly,pistachio,best-version", "Best version", "pistachio", "8.5"),
     ("Adult Greek frozen yogurt", "Frozen yogurt", "Tangy adult profile with texture and sweetness notes to dial in.", "CubeItaly,yogurt,adult", "Experiment", "yogurt", ""),
     ("Banana milk gelato", "Gelato", "Fresh banana process and formulation target for small-machine batches.", "CubeItaly,banana,fruit", "Experiment", "banana", ""),
-    ("Simple weekday sourdough bread", "Bread", SOURDOUGH_DESCRIPTION, "sourdough,bread,The Perfect Loaf,weekday", "Favorite", "", ""),
+    ("Simple Weekday Sourdough Bread", "Bread", SOURDOUGH_DESCRIPTION, "sourdough,bread,The Perfect Loaf,Maurizio Leo,weekday,2 loaves", "Favorite", "", ""),
+]
+
+
+PRODUCT_SHELF = [
+    {
+        "slug": "cacao-barry-extra-brute",
+        "name": "Cacao Barry Extra Brute",
+        "kind": "Cocoa powder",
+        "summary": "Dutch-process cocoa powder used for deep chocolate flavour in the rich chocolate ice cream.",
+        "details": "Used in rich chocolate ice cream: 55g per 1200g base, or 27.5g per 600g CubeItaly churn. Keep as an exact product reference because cocoa fat/process changes texture and flavour.",
+        "used_in": "Rich chocolate ice cream",
+        "source_name": "Manual product reference; add pack photo when available",
+        "source_url": "",
+        "photo_url": "",
+    },
+    {
+        "slug": "callebaut-70-5-dark-chocolate",
+        "name": "Callebaut 70.5% dark chocolate",
+        "kind": "Dark chocolate",
+        "summary": "Couverture-style dark chocolate used for cocoa butter, body, and adult chocolate flavour.",
+        "details": "Used in rich chocolate ice cream: 115g per 1200g base, or 57.5g per 600g CubeItaly churn. Important to track as a product because cocoa percentage and cocoa butter affect hardness/scoopability.",
+        "used_in": "Rich chocolate ice cream",
+        "source_name": "Manual product reference; add pack photo when available",
+        "source_url": "",
+        "photo_url": "",
+    },
+    {
+        "slug": "bread-flour",
+        "name": "Bread flour / strong white flour",
+        "kind": "Flour",
+        "summary": "Main flour reference for the Simple Weekday Sourdough Bread formula.",
+        "details": "Sourdough formula uses 900g total flour: 82g in the evening levain and 818g in the morning autolyse. Prefer a strong bread flour; exact brand can be updated after buying/photographing the bag.",
+        "used_in": "Simple Weekday Sourdough Bread",
+        "source_name": "Recipe source: The Perfect Loaf Simple Weekday Sourdough Bread",
+        "source_url": "https://www.theperfectloaf.com/simple-weekday-sourdough-bread/",
+        "photo_url": "",
+    },
+    {
+        "slug": "fine-sea-salt",
+        "name": "Fine sea salt",
+        "kind": "Salt",
+        "summary": "Baseline salt for bread and ice cream formulas.",
+        "details": "Sourdough formula uses 16g salt, about 1.8% of flour weight. Fine salt dissolves predictably during final mix.",
+        "used_in": "Simple Weekday Sourdough Bread; rich chocolate ice cream",
+        "source_name": "Manual pantry ingredient",
+        "source_url": "",
+        "photo_url": "",
+    },
+    {
+        "slug": "sourdough-starter",
+        "name": "Fridge sourdough starter",
+        "kind": "Starter",
+        "summary": "House starter kept small in the fridge and refreshed around each bake.",
+        "details": "Keep 40g in the fridge. In the evening before baking, take/use 20g for levain and refresh the remaining 20g with 20g flour + 20g water = 60g. Rest 30-60 min, then return 40g to the fridge.",
+        "used_in": "Simple Weekday Sourdough Bread",
+        "source_name": "Handwritten house process",
+        "source_url": "",
+        "photo_url": "",
+    },
+    {
+        "slug": "water",
+        "name": "Water",
+        "kind": "Water",
+        "summary": "Formula water reference for levain, autolyse, final mix, and starter refresh.",
+        "details": "Sourdough formula uses 684g total formula water for 76% hydration: 82g levain water, 552g autolyse water, and 50g final mix water. Starter refresh uses 20g water separately for maintenance.",
+        "used_in": "Simple Weekday Sourdough Bread; starter maintenance",
+        "source_name": "Recipe formula",
+        "source_url": "",
+        "photo_url": "",
+    },
 ]
 
 CSS = r"""
@@ -175,10 +263,10 @@ h1{margin:18px 0 14px;font-family:var(--display);font-weight:800;font-size:clamp
 .library-tools{display:grid;grid-template-columns:1fr auto;gap:12px;margin:0 0 18px}.search{border:1px solid var(--line);background:#fff;border-radius:12px;padding:13px 14px;font:inherit;color:var(--ink)}.search::placeholder,input::placeholder,textarea::placeholder{color:#aaa49b}.filter-note{align-self:center;color:var(--muted);font-size:14px}.library-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.recipe-card{overflow:hidden;border:1px solid var(--line);border-radius:16px;background:#fff;box-shadow:none;transition:border-color .15s,transform .15s,box-shadow .15s}.recipe-card:hover{transform:translateY(-1px);box-shadow:var(--shadow);border-color:#ded4c7}.recipe-card.add-card{display:grid;place-items:center;min-height:286px;border-style:dashed;background:var(--paper-soft)}.add-card-inner{text-align:center;padding:24px}.plus{width:44px;height:44px;border-radius:12px;background:var(--accent);color:white;display:grid;place-items:center;margin:0 auto 14px;font-size:24px}
 .thumb{height:118px;background:linear-gradient(135deg,#f5e9db,#fbf5e9);position:relative;border-bottom:1px solid var(--line)}.thumb:after{content:"";position:absolute;inset:26px 58px;border-radius:999px;background:#fff8eb;box-shadow:0 8px 18px rgba(64,42,24,.08)}.thumb:before{content:"";position:absolute;left:20px;bottom:16px;width:54px;height:8px;border-radius:999px;background:rgba(255,255,255,.55)}.thumb.chocolate{background:linear-gradient(135deg,#493229,#a96b50)}.thumb.pistachio{background:linear-gradient(135deg,#7d9a6d,#e8dfb7)}.thumb.banana{background:linear-gradient(135deg,#e3c95d,#fff0b5)}.thumb.yogurt{background:linear-gradient(135deg,#d5e2e4,#fffaf0)}.photo-thumb{padding:0;background:#f7f3ec}.photo-thumb img{display:block;width:100%;height:118px;object-fit:cover}.detail-photo.photo-thumb img{height:100%;min-height:220px}.photo-note{margin:4px 0 0;color:var(--soft);font-size:12px;line-height:1.4}
 .recipe-card-body{padding:16px}.recipe-card h3{margin:0 0 8px;font-family:var(--display);font-size:20px;line-height:1.2;letter-spacing:-.025em;color:var(--ink);text-wrap:balance}.recipe-card p{margin:0 0 13px;color:var(--muted);line-height:1.5;font-size:14.5px}.ingredient-list{list-style:none;margin:0 0 14px;padding:10px 0 0;border-top:1px solid var(--line);display:grid;gap:6px}.ingredient-list li{font-size:13px;line-height:1.35;color:#4b514c;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.ingredient-list .more{color:var(--soft);font-weight:700}.card-meta{display:flex;flex-wrap:wrap;gap:6px}.mini-pill{padding:5px 8px;border-radius:999px;background:var(--sage-soft);color:var(--sage);font-size:11.5px;font-weight:750;letter-spacing:.005em}
-.ingredient-shelf{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.product-card{border:1px solid var(--line);border-radius:16px;background:#fff;padding:16px}.product-kind{display:inline-block;margin-bottom:16px;color:var(--accent-dark);font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.08em}.product-card h3{margin:0 0 8px;color:var(--ink);font-family:var(--display);font-size:19px;line-height:1.22;letter-spacing:-.025em}.product-card p{margin:0 0 14px;color:var(--muted);font-size:14px;line-height:1.48}
+.ingredient-shelf,.product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.product-card{border:1px solid var(--line);border-radius:16px;background:#fff;padding:16px;display:grid;gap:12px;transition:border-color .15s,box-shadow .15s,transform .15s}.product-card:hover{transform:translateY(-1px);box-shadow:var(--shadow);border-color:#ded4c7}.product-media{height:118px;border-radius:12px;background:linear-gradient(135deg,var(--sage-soft),var(--paper-soft));display:grid;place-items:center;color:var(--sage);font-size:34px;font-weight:800;overflow:hidden}.product-media img{width:100%;height:100%;object-fit:cover;display:block}.product-kind{display:inline-block;color:var(--accent-dark);font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.08em}.product-card h3{margin:0 0 8px;color:var(--ink);font-family:var(--display);font-size:19px;line-height:1.22;letter-spacing:-.025em}.product-card p{margin:0 0 14px;color:var(--muted);font-size:14px;line-height:1.48}.product-detail-media{min-height:260px;border-radius:14px;border:1px solid var(--line);background:linear-gradient(135deg,var(--sage-soft),var(--paper-soft));display:grid;place-items:center;color:var(--sage);font-size:58px;font-weight:800;overflow:hidden}.product-detail-media img{width:100%;height:100%;object-fit:cover}.source-link{color:var(--sage);font-weight:750;text-decoration:underline;text-underline-offset:3px}
 .form-card{border:1px solid var(--line);border-radius:18px;background:#fff;box-shadow:none;padding:20px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}label{display:grid;gap:7px;color:#5f635e;font-size:13px;font-weight:750}input,textarea,select{width:100%;border:1px solid var(--line);background:#fff;border-radius:10px;padding:12px 13px;font:inherit;font-weight:480;color:var(--ink);outline:none}input:focus,textarea:focus,select:focus{border-color:#d7a18f;box-shadow:0 0 0 3px rgba(214,111,85,.13)}textarea{min-height:94px;resize:vertical}.full{grid-column:1/-1}.notice{margin:14px 0 0;color:var(--accent-dark);font-weight:720}
 .feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.feature{border:1px solid var(--line);border-radius:16px;background:#fff;padding:20px;min-height:150px}.feature .icon{font-size:22px;margin-bottom:16px}.feature h3{margin:0 0 8px;font-family:var(--display);font-size:20px;letter-spacing:-.025em;color:var(--ink)}.feature p{margin:0;color:var(--muted);line-height:1.52}
-.recipe-detail{padding:30px 0 56px}.back-link{display:inline-flex;margin:0 0 16px;color:var(--muted);font-weight:700}.detail-hero{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:24px;align-items:stretch;border:1px solid var(--line);border-radius:18px;background:#fff;padding:20px}.detail-hero h1{margin-top:16px}.detail-summary{font-size:17px;line-height:1.65;color:var(--muted);max-width:760px;text-wrap:pretty}.detail-photo{height:auto;min-height:220px;border-radius:14px;overflow:hidden;border:0}.detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}.detail-grid.single{grid-template-columns:1fr}.detail-panel{border:1px solid var(--line);border-radius:16px;background:#fff;padding:20px}.detail-panel h2{margin:0 0 12px;font-family:var(--display);font-size:28px;font-weight:800;letter-spacing:-.03em;color:var(--ink)}.detail-panel p{margin:0;color:var(--text);font-size:16px;line-height:1.7;white-space:pre-wrap}.detail-ingredients{margin:0;padding-left:20px;display:grid;gap:10px;color:var(--text);line-height:1.5}footer{padding:34px 0;color:var(--soft);font-size:14px}
+.recipe-detail{padding:30px 0 56px}.back-link{display:inline-flex;margin:0 0 16px;color:var(--muted);font-weight:700}.detail-hero{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:24px;align-items:stretch;border:1px solid var(--line);border-radius:18px;background:#fff;padding:20px}.detail-hero h1{margin-top:16px}.detail-summary{font-size:17px;line-height:1.65;color:var(--muted);max-width:760px;text-wrap:pretty}.detail-photo{height:auto;min-height:220px;border-radius:14px;overflow:hidden;border:0}.detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}.detail-grid.single{grid-template-columns:1fr}.detail-panel{border:1px solid var(--line);border-radius:16px;background:#fff;padding:20px}.detail-panel h2{margin:0 0 12px;font-family:var(--display);font-size:28px;font-weight:800;letter-spacing:-.03em;color:var(--ink)}.detail-panel p{margin:0;color:var(--text);font-size:16px;line-height:1.7;white-space:pre-wrap}.detail-ingredients{margin:0;padding-left:20px;display:grid;gap:10px;color:var(--text);line-height:1.5}.ingredient-table{width:100%;border-collapse:separate;border-spacing:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff}.ingredient-table th,.ingredient-table td{padding:12px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line);font-size:15px;line-height:1.35}.ingredient-table th{background:var(--paper-soft);color:var(--sage);font-size:12px;text-transform:uppercase;letter-spacing:.07em}.ingredient-table tr:last-child td{border-bottom:0}.ingredient-table td:first-child{font-weight:760;color:var(--ink)}.ingredient-table .note{color:var(--muted)}footer{padding:34px 0;color:var(--soft);font-size:14px}
 @media(max-width:900px){
   body{overflow-x:hidden}
   .shell{width:min(100% - 28px,1080px)}
@@ -194,7 +282,7 @@ h1{margin:18px 0 14px;font-family:var(--display);font-weight:800;font-size:clamp
   .app-card{display:none}
   .section{padding:22px 0}.section-head{display:block;margin-bottom:12px}.section h2{font-size:30px}.section .sub{font-size:15px;line-height:1.55}
   .library-tools,.form-grid{grid-template-columns:1fr;gap:10px}.search,input,textarea,select{font-size:16px;min-height:48px}.filter-note{font-size:13px}
-  .library-grid,.feature-grid,.ingredient-shelf{grid-template-columns:1fr;gap:10px}
+  .library-grid,.feature-grid,.ingredient-shelf,.product-grid{grid-template-columns:1fr;gap:10px}
   .recipe-card:not(.add-card){display:grid;grid-template-columns:96px minmax(0,1fr);min-height:116px}
   .recipe-card:not(.add-card) .thumb{height:100%;min-height:116px;border-bottom:0;border-right:1px solid var(--line)}
   .recipe-card:not(.add-card) .photo-thumb img{height:100%;min-height:116px}
@@ -203,7 +291,7 @@ h1{margin:18px 0 14px;font-family:var(--display);font-weight:800;font-size:clamp
   .recipe-card.add-card{min-height:116px}.add-card-inner{padding:18px}.plus{width:38px;height:38px;margin-bottom:10px}
   .product-card,.feature,.form-card,.detail-panel,.detail-hero{border-radius:14px;padding:14px}
   .product-card h3,.feature h3{font-size:18px}.product-card p,.feature p{font-size:14px}
-  .recipe-detail{padding:20px 0 42px}.back-link{min-height:44px;align-items:center;margin-bottom:8px}.detail-hero{gap:14px}.detail-hero h1{font-size:34px}.detail-photo{min-height:180px}.detail-photo.photo-thumb img{min-height:180px}.detail-panel h2{font-size:24px}.detail-panel p,.detail-ingredients{font-size:15.5px;line-height:1.6}.detail-ingredients{padding-left:18px;overflow-wrap:anywhere}
+  .recipe-detail{padding:20px 0 42px}.back-link{min-height:44px;align-items:center;margin-bottom:8px}.detail-hero{gap:14px}.detail-hero h1{font-size:34px}.detail-photo{min-height:180px}.detail-photo.photo-thumb img{min-height:180px}.detail-panel h2{font-size:24px}.detail-panel p,.detail-ingredients{font-size:15.5px;line-height:1.6}.detail-ingredients{padding-left:18px;overflow-wrap:anywhere}.ingredient-table{border:0;background:transparent}.ingredient-table thead{display:none}.ingredient-table,.ingredient-table tbody,.ingredient-table tr,.ingredient-table td{display:block;width:100%}.ingredient-table tr{border:1px solid var(--line);border-radius:12px;background:#fff;margin-bottom:10px;overflow:hidden}.ingredient-table td{border-bottom:1px solid var(--line);padding:10px 12px}.ingredient-table td:last-child{border-bottom:0}.ingredient-table td::before{content:attr(data-label);display:block;margin-bottom:3px;color:var(--sage);font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.07em}
   label{font-size:13px}textarea{min-height:120px}.full{grid-column:auto}.photo-note{font-size:12px}.login-shell{padding:22px}.login-card{width:min(100%,390px)}.login-card h1{font-size:34px}
 }
 @media(max-width:380px){
@@ -231,7 +319,7 @@ def seed_ingredients(title: str) -> str:
         "Kid-friendly chocolate gelato": "Whole milk\nCream\nCocoa powder\nChocolate\nSugar + dextrose",
         "Adult Greek frozen yogurt": "Fage 5% Greek yogurt\nWhole milk\nCream\nSugar + dextrose\nLemon or salt if needed",
         "Banana milk gelato": "Very ripe banana\nWhole milk\nCream\nSugar + dextrose\nFine sea salt",
-        "Simple weekday sourdough bread": "Starter maintenance: keep 40g starter in fridge; take 20g out for levain; refresh remaining 20g starter + 20g flour + 20g water = 60g; rest 30-60 min; return 40g to fridge\nLevain: 82g flour + 82g water + 16g starter = 180g\nAutolyse: 818g flour + 490g water\nFinal mix: all 180g levain + 50g water + 16g salt\nTotal formula: 900g flour, 630g water, 16g salt, 16g starter\nBaker percentages: 70% hydration, 1.8% salt, 9.1% prefermented flour\nYield: about 1560g total dough",
+        "Simple Weekday Sourdough Bread": "Starter maintenance: keep 40g starter in fridge; take 20g out for levain; refresh remaining 20g starter + 20g flour + 20g water = 60g; rest 30-60 min; return 40g to fridge\nLevain: 82g bread flour + 82g water + 16g starter = 180g\nAutolyse: 818g bread flour + 552g water\nFinal mix: all 180g levain + 50g water + 16g fine sea salt\nTotal formula: 900g flour, 684g water, 16g salt, 16g starter\nBaker percentages: 76% hydration, 1.8% salt, 9.1% prefermented flour\nYield: about 1615g total dough; 2 loaves of about 800g each\nSource: Maurizio Leo / The Perfect Loaf Simple Weekday Sourdough Bread",
     }
     return seeds.get(title, "")
 
@@ -261,6 +349,14 @@ def init_db() -> None:
             con.execute("ALTER TABLE recipes ADD COLUMN ingredients TEXT NOT NULL DEFAULT ''")
         if "cover_photo" not in existing_cols:
             con.execute("ALTER TABLE recipes ADD COLUMN cover_photo TEXT NOT NULL DEFAULT ''")
+        con.execute(
+            """
+            UPDATE recipes
+            SET title = ?
+            WHERE title = ? AND NOT EXISTS (SELECT 1 FROM recipes WHERE title = ?)
+            """,
+            ("Simple Weekday Sourdough Bread", "Simple weekday sourdough bread", "Simple Weekday Sourdough Bread"),
+        )
 
         con.execute(
             """
@@ -482,6 +578,141 @@ def render_recipe_card(recipe: sqlite3.Row) -> str:
     """
 
 
+def render_sourdough_ingredient_table() -> str:
+    rows = [
+        ("Total flour", "900g", "100%", "Includes levain and autolyse flour."),
+        ("Total water", "684g", "76%", "82g in levain + 552g autolyse + 50g final mix."),
+        ("Salt", "16g", "1.8%", "Add during final mix."),
+        ("Mature starter", "16g", "1.8%", "Seeds the evening levain."),
+        ("Levain build", "180g", "20%", "82g flour + 82g water + 16g starter; build in the evening."),
+        ("Prefermented flour", "82g", "9.1%", "Flour contained in the levain."),
+        ("Yield", "~1615g dough", "—", "Two loaves of about 800g each."),
+    ]
+    body = "".join(
+        "<tr>"
+        f"<td data-label=\"Ingredient\">{esc(name)}</td>"
+        f"<td data-label=\"Amount\">{esc(amount)}</td>"
+        f"<td data-label=\"Baker %\">{esc(percent)}</td>"
+        f"<td class=\"note\" data-label=\"Notes\">{esc(note)}</td>"
+        "</tr>"
+        for name, amount, percent, note in rows
+    )
+    return f"""
+          <table class="ingredient-table">
+            <thead><tr><th>Ingredient</th><th>Amount</th><th>Baker %</th><th>Notes</th></tr></thead>
+            <tbody>{body}</tbody>
+          </table>"""
+
+
+
+
+def get_product(slug: str) -> dict[str, str] | None:
+    for product in PRODUCT_SHELF:
+        if product["slug"] == slug:
+            return product
+    return None
+
+
+def product_initial(product: dict[str, str]) -> str:
+    return esc(product["name"][:1].upper() or "•")
+
+
+def render_product_card(product: dict[str, str]) -> str:
+    photo = esc(product.get("photo_url", ""))
+    media = f'<div class="product-media"><img src="{photo}" alt="{esc(product["name"])} product photo" loading="lazy" /></div>' if photo else f'<div class="product-media">{product_initial(product)}</div>'
+    source = "Source saved" if product.get("source_url") else "Manual photo/details"
+    return f"""
+      <a class="product-card" href="/ingredients/{esc(product['slug'])}">
+        {media}
+        <div><span class="product-kind">{esc(product['kind'])}</span><h3>{esc(product['name'])}</h3><p>{esc(product['summary'])}</p></div>
+        <div class="card-meta"><span class="mini-pill">{esc(product['used_in'])}</span><span class="mini-pill">{source}</span></div>
+      </a>
+    """
+
+
+def ingredient_page(username: str) -> bytes:
+    cards = "\n".join(render_product_card(product) for product in PRODUCT_SHELF)
+    html_doc = f"""<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ingredients · Home Recipes</title>
+  <style>{CSS}</style>
+</head>
+<body>
+  <header class="shell">
+    <a class="brand" href="/" aria-label="Home Recipes home"><span class="mark">✦</span><span>Home Recipes</span></a>
+    <nav><a href="/#library">Library</a><a href="/ingredients">Ingredients</a><a href="/#add">Add recipe</a><span class="nav-user">{esc(username)}</span><a href="/logout">Log out</a></nav>
+  </header>
+  <main class="shell">
+    <section class="section">
+      <a class="back-link" href="/">← Back to recipes</a>
+      <div class="section-head"><h2>Ingredient shelf.</h2><p class="sub">Exact products, pantry references, photos, sources, and where each item is used. Product pages stay private behind the family login.</p></div>
+      <div class="product-grid">{cards}</div>
+    </section>
+  </main>
+  <footer class="shell">Home Recipes · a private kitchen notebook for recipes, products, photos, and results.</footer>
+</body>
+</html>"""
+    return html_doc.encode("utf-8")
+
+
+def product_detail_page(username: str, product: dict[str, str]) -> bytes:
+    photo = esc(product.get("photo_url", ""))
+    media = f'<div class="product-detail-media"><img src="{photo}" alt="{esc(product["name"])} product photo" /></div>' if photo else f'<div class="product-detail-media">{product_initial(product)}</div>'
+    source = ""
+    if product.get("source_url"):
+        source = f'<p>Source: <a class="source-link" href="{esc(product["source_url"])}" rel="noreferrer">{esc(product["source_name"])}</a></p>'
+    else:
+        source = f'<p>Source/photo: {esc(product["source_name"])}.</p>'
+    html_doc = f"""<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{esc(product['name'])} · Home Recipes</title>
+  <style>{CSS}</style>
+</head>
+<body>
+  <header class="shell">
+    <a class="brand" href="/" aria-label="Home Recipes home"><span class="mark">✦</span><span>Home Recipes</span></a>
+    <nav><a href="/#library">Library</a><a href="/ingredients">Ingredients</a><a href="/#add">Add recipe</a><span class="nav-user">{esc(username)}</span><a href="/logout">Log out</a></nav>
+  </header>
+  <main class="shell">
+    <section class="recipe-detail">
+      <a class="back-link" href="/ingredients">← Back to ingredients</a>
+      <div class="detail-hero">
+        <div>
+          <div class="card-meta"><span class="mini-pill">{esc(product['kind'])}</span><span class="mini-pill">{esc(product['used_in'])}</span></div>
+          <h1>{esc(product['name'])}</h1>
+          <p class="detail-summary">{esc(product['summary'])}</p>
+          <div class="actions"><a class="button secondary" href="/ingredients">All ingredients</a></div>
+        </div>
+        {media}
+      </div>
+      <div class="detail-grid single">
+        <article class="detail-panel">
+          <h2>Product details</h2>
+          <p>{esc(product['details'])}</p>
+          {source}
+        </article>
+      </div>
+    </section>
+  </main>
+  <footer class="shell">Home Recipes · a private kitchen notebook for recipes, products, photos, and results.</footer>
+</body>
+</html>"""
+    return html_doc.encode("utf-8")
+
+
+def parse_ingredient_path(path: str) -> str | None:
+    parts = path.strip("/").split("/")
+    if len(parts) == 2 and parts[0] == "ingredients":
+        return parts[1]
+    return None
+
+
 def recipe_detail_page(username: str, recipe: sqlite3.Row) -> bytes:
     tags = [t.strip() for t in str(recipe["tags"] or "").split(",") if t.strip()]
     pills = [recipe["category"], recipe["status"]] + tags
@@ -489,7 +720,12 @@ def recipe_detail_page(username: str, recipe: sqlite3.Row) -> bytes:
         pills.insert(0, f"★ {recipe['rating']}")
     pill_html = "".join(f'<span class="mini-pill">{esc(p)}</span>' for p in pills if p)
     ingredient_lines = [line.strip() for line in str(recipe["ingredients"] or "").splitlines() if line.strip()]
-    ingredient_html = "".join(f"<li>{esc(line)}</li>" for line in ingredient_lines) or "<li>No ingredients recorded yet.</li>"
+    if str(recipe["title"] or "").strip().lower() in {"simple weekday sourdough bread", "simple weekday sourdough bread".lower()}:
+        ingredient_html = render_sourdough_ingredient_table()
+        ingredient_heading = "Formula table"
+    else:
+        ingredient_html = "<ul class=\"detail-ingredients\">" + ("".join(f"<li>{esc(line)}</li>" for line in ingredient_lines) or "<li>No ingredients recorded yet.</li>") + "</ul>"
+        ingredient_heading = "Ingredients / product references"
     summary_plain = str(recipe["summary"] or "").strip()
     hero_summary_plain = intro_text(summary_plain, 260)
     full_description = ""
@@ -518,7 +754,7 @@ def recipe_detail_page(username: str, recipe: sqlite3.Row) -> bytes:
 <body>
   <header class="shell">
     <a class="brand" href="/" aria-label="Home Recipes home"><span class="mark">✦</span><span>Home Recipes</span></a>
-    <nav><a href="/#library">Library</a><a href="/#ingredients">Ingredients</a><a href="/#add">Add recipe</a><span class="nav-user">{esc(username)}</span><a href="/logout">Log out</a></nav>
+    <nav><a href="/#library">Library</a><a href="/ingredients">Ingredients</a><a href="/#add">Add recipe</a><span class="nav-user">{esc(username)}</span><a href="/logout">Log out</a></nav>
   </header>
   <main class="shell">
     <section class="recipe-detail">
@@ -535,8 +771,8 @@ def recipe_detail_page(username: str, recipe: sqlite3.Row) -> bytes:
       <div class="detail-grid{grid_class}">
         {full_description}
         <article class="detail-panel">
-          <h2>Ingredients / product references</h2>
-          <ul class="detail-ingredients">{ingredient_html}</ul>
+          <h2>{ingredient_heading}</h2>
+          {ingredient_html}
         </article>
       </div>
     </section>
@@ -567,7 +803,7 @@ def edit_recipe_page(username: str, recipe: sqlite3.Row, message: str = "") -> b
 <body>
   <header class="shell">
     <a class="brand" href="/" aria-label="Home Recipes home"><span class="mark">✦</span><span>Home Recipes</span></a>
-    <nav><a href="/#library">Library</a><span class="nav-user">{esc(username)}</span><a href="/logout">Log out</a></nav>
+    <nav><a href="/#library">Library</a><a href="/ingredients">Ingredients</a><span class="nav-user">{esc(username)}</span><a href="/logout">Log out</a></nav>
   </header>
   <main class="shell">
     <section class="section">
@@ -611,7 +847,7 @@ def page(username: str, message: str = "") -> bytes:
 <body>
   <header class="shell">
     <a class="brand" href="/" aria-label="Home Recipes home"><span class="mark">✦</span><span>Home Recipes</span></a>
-    <nav><a href="#library">Library</a><a href="#ingredients">Ingredients</a><a href="#add">Add recipe</a><a href="#features">Features</a><span class="nav-user">{esc(username)}</span><a href="/logout">Log out</a></nav>
+    <nav><a href="#library">Library</a><a href="/ingredients">Ingredients</a><a href="#add">Add recipe</a><a href="#features">Features</a><span class="nav-user">{esc(username)}</span><a href="/logout">Log out</a></nav>
   </header>
 
   <main class="shell">
@@ -649,15 +885,9 @@ def page(username: str, message: str = "") -> bytes:
     </section>
 
     <section id="ingredients" class="section">
-      <div class="section-head"><h2>Ingredient shelf.</h2><p class="sub">A separate place for exact products, brands, fat percentages, and where they are used. Recipes can reference these instead of repeating product details every time.</p></div>
-      <div class="ingredient-shelf">
-        <article class="product-card"><span class="product-kind">Milk</span><h3>Migros Bio Vollmilch 3.5%</h3><p>Default whole milk reference for gelato formulas.</p><div class="card-meta"><span class="mini-pill">Used in pistachio</span><span class="mini-pill">Swiss grocery</span></div></article>
-        <article class="product-card"><span class="product-kind">Cream</span><h3>Coop Vollrahm 35%</h3><p>Reference cream product for richer ice cream and gelato bases.</p><div class="card-meta"><span class="mini-pill">Chocolate</span><span class="mini-pill">Yogurt</span></div></article>
-        <article class="product-card"><span class="product-kind">Yogurt</span><h3>Fage Total 5%</h3><p>Greek yogurt baseline for adult frozen yogurt.</p><div class="card-meta"><span class="mini-pill">Frozen yogurt</span></div></article>
-        <article class="product-card"><span class="product-kind">Cocoa powder</span><h3>Cacao Barry Extra Brute</h3><p>High-fat Dutch-process cocoa powder for the rich chocolate ice cream. Recipe reference: 55g total base, 27.5g per CubeItaly churn.</p><div class="card-meta"><span class="mini-pill">Rich chocolate ice cream</span><span class="mini-pill">Chocolate depth</span></div></article>
-        <article class="product-card"><span class="product-kind">Dark chocolate</span><h3>Callebaut 70.5%</h3><p>Couverture chocolate for body and flavour in the rich chocolate ice cream. Recipe reference: 115g total base, 57.5g per CubeItaly churn.</p><div class="card-meta"><span class="mini-pill">Rich chocolate ice cream</span><span class="mini-pill">Cocoa butter</span></div></article>
-        <article class="product-card"><span class="product-kind">Flavor</span><h3>100% pistachio paste</h3><p>Unsweetened paste; keep separate from sweet pistachio cream.</p><div class="card-meta"><span class="mini-pill">Pistachio gelato</span></div></article>
-      </div>
+      <div class="section-head"><h2>Ingredient shelf.</h2><p class="sub">Exact products and pantry references now live on their own private ingredient pages with details, source links, and photo placeholders.</p></div>
+      <div class="ingredient-shelf">{"".join(render_product_card(product) for product in PRODUCT_SHELF[:3])}</div>
+      <div class="actions"><a class="button secondary" href="/ingredients">Open all ingredients →</a></div>
     </section>
 
     <section id="add" class="section">
@@ -796,6 +1026,17 @@ class Handler(BaseHTTPRequestHandler):
         if not username:
             self.redirect("/login")
             return
+        if parsed.path == "/ingredients":
+            self.send_html(ingredient_page(username), include_body=False)
+            return
+        product_slug = parse_ingredient_path(parsed.path)
+        if product_slug:
+            product = get_product(product_slug)
+            if not product:
+                self.send_error(404)
+                return
+            self.send_html(product_detail_page(username, product), include_body=False)
+            return
         recipe_route = parse_recipe_path(parsed.path)
         if recipe_route:
             recipe_id, action = recipe_route
@@ -840,6 +1081,17 @@ class Handler(BaseHTTPRequestHandler):
             return
         username = self.require_user()
         if not username:
+            return
+        if parsed.path == "/ingredients":
+            self.send_html(ingredient_page(username))
+            return
+        product_slug = parse_ingredient_path(parsed.path)
+        if product_slug:
+            product = get_product(product_slug)
+            if not product:
+                self.send_error(404)
+                return
+            self.send_html(product_detail_page(username, product))
             return
         recipe_route = parse_recipe_path(parsed.path)
         if recipe_route:
