@@ -219,7 +219,7 @@ h1{margin:18px 0 14px;font-family:var(--display);font-weight:800;font-size:clamp
 .ingredient-shelf,.product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.product-card{border:1px solid var(--line);border-radius:16px;background:#fff;padding:16px;display:grid;gap:12px;transition:border-color .15s,box-shadow .15s,transform .15s}.product-card:hover{transform:translateY(-1px);box-shadow:var(--shadow);border-color:#ded4c7}.product-media{height:118px;border-radius:12px;background:linear-gradient(135deg,var(--sage-soft),var(--paper-soft));display:grid;place-items:center;color:var(--sage);font-size:34px;font-weight:800;overflow:hidden}.product-media img{width:100%;height:100%;object-fit:cover;display:block}.product-kind{display:inline-block;color:var(--accent-dark);font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.08em}.product-card h3{margin:0 0 8px;color:var(--ink);font-family:var(--display);font-size:19px;line-height:1.22;letter-spacing:-.025em}.product-card p{margin:0 0 14px;color:var(--muted);font-size:14px;line-height:1.48}.product-detail-media{min-height:260px;border-radius:14px;border:1px solid var(--line);background:linear-gradient(135deg,var(--sage-soft),var(--paper-soft));display:grid;place-items:center;color:var(--sage);font-size:58px;font-weight:800;overflow:hidden}.product-detail-media img{width:100%;height:100%;object-fit:cover}.source-link{color:var(--sage);font-weight:750;text-decoration:underline;text-underline-offset:3px}
 .form-card{border:1px solid var(--line);border-radius:18px;background:#fff;box-shadow:none;padding:20px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}label{display:grid;gap:7px;color:#5f635e;font-size:13px;font-weight:750}input,textarea,select{width:100%;border:1px solid var(--line);background:#fff;border-radius:10px;padding:12px 13px;font:inherit;font-weight:480;color:var(--ink);outline:none}input:focus,textarea:focus,select:focus{border-color:#d7a18f;box-shadow:0 0 0 3px rgba(214,111,85,.13)}textarea{min-height:94px;resize:vertical}.full{grid-column:1/-1}.notice{margin:14px 0 0;color:var(--accent-dark);font-weight:720}
 .feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.feature{border:1px solid var(--line);border-radius:16px;background:#fff;padding:20px;min-height:150px}.feature .icon{font-size:22px;margin-bottom:16px}.feature h3{margin:0 0 8px;font-family:var(--display);font-size:20px;letter-spacing:-.025em;color:var(--ink)}.feature p{margin:0;color:var(--muted);line-height:1.52}
-.recipe-detail{padding:30px 0 56px}.back-link{display:inline-flex;margin:0 0 16px;color:var(--muted);font-weight:700}.detail-hero{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:24px;align-items:stretch;border:1px solid var(--line);border-radius:18px;background:#fff;padding:20px}.detail-hero h1{margin-top:16px}.detail-summary{font-size:17px;line-height:1.65;color:var(--muted);max-width:760px;text-wrap:pretty}.detail-photo{height:auto;min-height:220px;border-radius:14px;overflow:hidden;border:0}.detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}.detail-grid.single{grid-template-columns:1fr}.detail-panel{border:1px solid var(--line);border-radius:16px;background:#fff;padding:20px}.detail-panel h2{margin:0 0 12px;font-family:var(--display);font-size:28px;font-weight:800;letter-spacing:-.03em;color:var(--ink)}.detail-panel p{margin:0;color:var(--text);font-size:16px;line-height:1.7;white-space:pre-wrap}.detail-ingredients{margin:0;padding-left:20px;display:grid;gap:10px;color:var(--text);line-height:1.5}.ingredient-table{width:100%;border-collapse:separate;border-spacing:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff}.ingredient-table th,.ingredient-table td{padding:12px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line);font-size:15px;line-height:1.35}.ingredient-table th{background:var(--paper-soft);color:var(--sage);font-size:12px;text-transform:uppercase;letter-spacing:.07em}.ingredient-table tr:last-child td{border-bottom:0}.ingredient-table td:first-child{font-weight:760;color:var(--ink)}.ingredient-table .stage{color:var(--sage);font-weight:820}.ingredient-table .note{color:var(--muted)}.sourdough-ingredient-table th:nth-child(1){width:19%}.sourdough-ingredient-table th:nth-child(2){width:24%}.sourdough-ingredient-table th:nth-child(3){width:18%}.sourdough-ingredient-table th:nth-child(4){width:12%}footer{padding:34px 0;color:var(--soft);font-size:14px}
+.recipe-detail{padding:30px 0 56px}.back-link{display:inline-flex;margin:0 0 16px;color:var(--muted);font-weight:700}.detail-hero{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:24px;align-items:stretch;border:1px solid var(--line);border-radius:18px;background:#fff;padding:20px}.detail-hero h1{margin-top:16px}.detail-summary{font-size:17px;line-height:1.65;color:var(--muted);max-width:760px;text-wrap:pretty}.detail-photo{height:auto;min-height:220px;border-radius:14px;overflow:hidden;border:0}.detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}.detail-grid.single{grid-template-columns:1fr}.detail-panel{border:1px solid var(--line);border-radius:16px;background:#fff;padding:20px}.detail-panel h2{margin:0 0 12px;font-family:var(--display);font-size:28px;font-weight:800;letter-spacing:-.03em;color:var(--ink)}.detail-panel p{margin:0;color:var(--text);font-size:16px;line-height:1.7;white-space:pre-wrap}.detail-ingredients{margin:0;padding-left:20px;display:grid;gap:10px;color:var(--text);line-height:1.5}.ingredient-table{width:100%;border-collapse:separate;border-spacing:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff}.ingredient-table th,.ingredient-table td{padding:12px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line);font-size:15px;line-height:1.35}.ingredient-table th{background:var(--paper-soft);color:var(--sage);font-size:12px;text-transform:uppercase;letter-spacing:.07em}.ingredient-table tr:last-child td{border-bottom:0}.ingredient-table td:first-child{font-weight:760;color:var(--ink)}.ingredient-table .stage{color:var(--sage);font-weight:820}.ingredient-table .note{color:var(--muted)}.sourdough-ingredient-table th:nth-child(1){width:19%}.sourdough-ingredient-table th:nth-child(2){width:24%}.sourdough-ingredient-table th:nth-child(3){width:18%}.sourdough-ingredient-table th:nth-child(4){width:12%}.full-width{grid-column:1/-1}.panel-sub{color:var(--muted)!important;margin:-4px 0 16px!important}.note-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:12px 0 16px}.note-card{border:1px solid var(--line);border-radius:14px;background:var(--paper-soft);padding:14px}.note-card h3{margin:8px 0 8px;font-family:var(--display);font-size:21px;line-height:1.2;color:var(--ink)}.note-card p{font-size:14.5px;line-height:1.55}.note-card ul{margin:8px 0 0;padding-left:18px;color:var(--text);font-size:14.5px;line-height:1.5}.note-card strong{display:block;margin-top:10px;color:var(--sage);font-size:12px;text-transform:uppercase;letter-spacing:.07em}.empty-note{border:1px dashed var(--line);border-radius:14px;padding:14px;color:var(--muted)!important;background:var(--paper-soft)}.inline-form{border-top:1px solid var(--line);padding-top:16px;margin-top:16px}.inline-form h3{margin:0 0 12px;font-family:var(--display);font-size:22px;color:var(--ink)}footer{padding:34px 0;color:var(--soft);font-size:14px}
 @media(max-width:900px){
   body{overflow-x:hidden}
   .shell{width:min(100% - 28px,1080px)}
@@ -235,7 +235,7 @@ h1{margin:18px 0 14px;font-family:var(--display);font-weight:800;font-size:clamp
   .app-card{display:none}
   .section{padding:22px 0}.section-head{display:block;margin-bottom:12px}.section h2{font-size:30px}.section .sub{font-size:15px;line-height:1.55}
   .library-tools,.form-grid{grid-template-columns:1fr;gap:10px}.search,input,textarea,select{font-size:16px;min-height:48px}.filter-note{font-size:13px}
-  .library-grid,.feature-grid,.ingredient-shelf,.product-grid{grid-template-columns:1fr;gap:10px}
+  .library-grid,.feature-grid,.ingredient-shelf,.product-grid,.note-grid{grid-template-columns:1fr;gap:10px}
   .recipe-card:not(.add-card){display:grid;grid-template-columns:96px minmax(0,1fr);min-height:116px}
   .recipe-card:not(.add-card) .thumb{height:100%;min-height:116px;border-bottom:0;border-right:1px solid var(--line)}
   .recipe-card:not(.add-card) .photo-thumb img{height:100%;min-height:116px}
@@ -313,17 +313,43 @@ def init_db() -> None:
 
         con.execute(
             """
+            CREATE TABLE IF NOT EXISTS recipe_variations (
+              id INTEGER PRIMARY KEY AUTOINCREMENT,
+              recipe_id INTEGER NOT NULL REFERENCES recipes(id) ON DELETE CASCADE,
+              name TEXT NOT NULL,
+              summary TEXT NOT NULL DEFAULT '',
+              formula_notes TEXT NOT NULL DEFAULT '',
+              ingredient_overrides TEXT NOT NULL DEFAULT '',
+              target_notes TEXT NOT NULL DEFAULT '',
+              created_at TEXT NOT NULL,
+              updated_at TEXT NOT NULL,
+              UNIQUE(recipe_id, name)
+            )
+            """
+        )
+        con.execute(
+            """
             CREATE TABLE IF NOT EXISTS batches (
               id INTEGER PRIMARY KEY AUTOINCREMENT,
               recipe_id INTEGER NOT NULL REFERENCES recipes(id) ON DELETE CASCADE,
+              variation_id INTEGER REFERENCES recipe_variations(id) ON DELETE SET NULL,
               made_on TEXT NOT NULL,
               rating TEXT NOT NULL DEFAULT '',
+              dough_notes TEXT NOT NULL DEFAULT '',
               result_notes TEXT NOT NULL DEFAULT '',
+              photo_notes TEXT NOT NULL DEFAULT '',
               next_tweak TEXT NOT NULL DEFAULT '',
               created_at TEXT NOT NULL
             )
             """
         )
+        batch_cols = {row[1] for row in con.execute("PRAGMA table_info(batches)")}
+        if "variation_id" not in batch_cols:
+            con.execute("ALTER TABLE batches ADD COLUMN variation_id INTEGER REFERENCES recipe_variations(id) ON DELETE SET NULL")
+        if "dough_notes" not in batch_cols:
+            con.execute("ALTER TABLE batches ADD COLUMN dough_notes TEXT NOT NULL DEFAULT ''")
+        if "photo_notes" not in batch_cols:
+            con.execute("ALTER TABLE batches ADD COLUMN photo_notes TEXT NOT NULL DEFAULT ''")
         now = datetime.now(timezone.utc).isoformat()
         for title, category, summary, tags, status, color, rating in SEED_RECIPES:
             con.execute(
@@ -337,6 +363,25 @@ def init_db() -> None:
             con.execute(
                 "UPDATE recipes SET ingredients = ? WHERE title = ? AND ingredients = ''",
                 (seed_ingredients(title), title),
+            )
+        sourdough = con.execute("SELECT id FROM recipes WHERE title = ?", ("Simple Weekday Sourdough Bread",)).fetchone()
+        if sourdough:
+            con.execute(
+                """
+                INSERT OR IGNORE INTO recipe_variations
+                (recipe_id, name, summary, formula_notes, ingredient_overrides, target_notes, created_at, updated_at)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+                """,
+                (
+                    sourdough["id"],
+                    "10% whole wheat",
+                    "Replace 90g of total flour with whole wheat while keeping the base process.",
+                    "Start at the base 76% hydration; add 10-20g extra water if the dough feels tight.",
+                    "Total flour 900g = 810g bread flour + 90g whole wheat flour\nTotal water 684g baseline\nSalt 16g\nLevain unchanged",
+                    "Watch fermentation speed and crumb openness; whole wheat may ferment faster and absorb more water.",
+                    now,
+                    now,
+                ),
             )
 
 
@@ -500,6 +545,90 @@ def intro_text(value: object, limit: int = 260) -> str:
 
 def normalized_text(value: object) -> str:
     return " ".join(str(value or "").split())
+
+
+def get_recipe_variations(recipe_id: int) -> list[sqlite3.Row]:
+    with connect() as con:
+        return list(con.execute("SELECT * FROM recipe_variations WHERE recipe_id = ? ORDER BY name ASC", (recipe_id,)))
+
+
+def get_recipe_batches(recipe_id: int) -> list[sqlite3.Row]:
+    with connect() as con:
+        return list(
+            con.execute(
+                """
+                SELECT b.*, v.name AS variation_name
+                FROM batches b
+                LEFT JOIN recipe_variations v ON v.id = b.variation_id
+                WHERE b.recipe_id = ?
+                ORDER BY b.made_on DESC, b.id DESC
+                """,
+                (recipe_id,),
+            )
+        )
+
+
+def create_variation(recipe_id: int, fields: dict[str, str]) -> str | None:
+    name = fields.get("name", "").strip()
+    if not name:
+        return "Variation name is required."
+    summary = fields.get("summary", "").strip()
+    formula_notes = fields.get("formula_notes", "").strip()
+    ingredient_overrides = fields.get("ingredient_overrides", "").strip()
+    target_notes = fields.get("target_notes", "").strip()
+    now = datetime.now(timezone.utc).isoformat()
+    try:
+        with connect() as con:
+            if not con.execute("SELECT id FROM recipes WHERE id = ?", (recipe_id,)).fetchone():
+                return "Recipe not found."
+            con.execute(
+                """
+                INSERT INTO recipe_variations
+                (recipe_id, name, summary, formula_notes, ingredient_overrides, target_notes, created_at, updated_at)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+                """,
+                (recipe_id, name, summary, formula_notes, ingredient_overrides, target_notes, now, now),
+            )
+            con.execute("UPDATE recipes SET updated_at = ? WHERE id = ?", (now, recipe_id))
+    except sqlite3.IntegrityError:
+        return "A variation with that name already exists for this recipe."
+    return None
+
+
+def create_batch(recipe_id: int, fields: dict[str, str]) -> str | None:
+    variations = get_recipe_variations(recipe_id)
+    valid_variation_ids = {int(v["id"]) for v in variations}
+    variation_raw = fields.get("variation_id", "").strip()
+    variation_id = None
+    if variation_raw:
+        try:
+            variation_id = int(variation_raw)
+        except ValueError:
+            return "Variation is invalid."
+        if variation_id not in valid_variation_ids:
+            return "Variation does not belong to this recipe."
+    made_on = fields.get("made_on", "").strip() or datetime.now().date().isoformat()
+    rating = fields.get("rating", "").strip()
+    dough_notes = fields.get("dough_notes", "").strip()
+    result_notes = fields.get("result_notes", "").strip()
+    photo_notes = fields.get("photo_notes", "").strip()
+    next_tweak = fields.get("next_tweak", "").strip()
+    if not any([rating, dough_notes, result_notes, photo_notes, next_tweak]):
+        return "Add at least one note or rating for the bake log."
+    now = datetime.now(timezone.utc).isoformat()
+    with connect() as con:
+        if not con.execute("SELECT id FROM recipes WHERE id = ?", (recipe_id,)).fetchone():
+            return "Recipe not found."
+        con.execute(
+            """
+            INSERT INTO batches
+            (recipe_id, variation_id, made_on, rating, dough_notes, result_notes, photo_notes, next_tweak, created_at)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+            """,
+            (recipe_id, variation_id, made_on, rating, dough_notes, result_notes, photo_notes, next_tweak, now),
+        )
+        con.execute("UPDATE recipes SET updated_at = ? WHERE id = ?", (now, recipe_id))
+    return None
 
 
 def render_recipe_card(recipe: sqlite3.Row) -> str:
@@ -672,7 +801,104 @@ def parse_ingredient_path(path: str) -> str | None:
     return None
 
 
+def textarea_lines(value: object) -> str:
+    lines = [line.strip() for line in str(value or "").splitlines() if line.strip()]
+    if not lines:
+        return ""
+    return "<ul>" + "".join(f"<li>{esc(line)}</li>" for line in lines) + "</ul>"
+
+
+def render_variations_section(recipe: sqlite3.Row, variations: list[sqlite3.Row]) -> str:
+    if variations:
+        cards = []
+        for variation in variations:
+            summary = f'<p>{esc(variation["summary"])}</p>' if variation["summary"] else ""
+            formula = f'<div><strong>Formula notes</strong><p>{esc(variation["formula_notes"])}</p></div>' if variation["formula_notes"] else ""
+            overrides = f'<div><strong>Ingredient overrides</strong>{textarea_lines(variation["ingredient_overrides"])}</div>' if variation["ingredient_overrides"] else ""
+            target = f'<div><strong>Target / watch-outs</strong><p>{esc(variation["target_notes"])}</p></div>' if variation["target_notes"] else ""
+            cards.append(
+                f"""
+                <article class="note-card">
+                  <div class="card-meta"><span class="mini-pill">Variation</span></div>
+                  <h3>{esc(variation['name'])}</h3>
+                  {summary}
+                  {formula}
+                  {overrides}
+                  {target}
+                </article>"""
+            )
+        cards_html = "".join(cards)
+    else:
+        cards_html = '<p class="empty-note">No variations yet. Add the first one when you change flour, hydration, timing, or process.</p>'
+    return f"""
+        <article class="detail-panel full-width">
+          <h2>Variations</h2>
+          <p class="panel-sub">Child formulas that stay attached to this recipe, such as 10% whole wheat or higher hydration.</p>
+          <div class="note-grid">{cards_html}</div>
+          <form class="inline-form" method="post" action="/recipes/{recipe['id']}/variations">
+            <h3>Add variation</h3>
+            <div class="form-grid">
+              <label>Name<input name="name" required placeholder="e.g. 10% whole wheat" /></label>
+              <label>Summary<input name="summary" placeholder="What changes from the base recipe?" /></label>
+              <label class="full">Formula notes<textarea name="formula_notes" placeholder="Hydration, baker %, timing changes..."></textarea></label>
+              <label class="full">Ingredient overrides<textarea name="ingredient_overrides" placeholder="Total flour 900g = 810g bread flour + 90g whole wheat flour"></textarea></label>
+              <label class="full">Target / watch-outs<textarea name="target_notes" placeholder="What result are you testing, and what should you watch?"></textarea></label>
+            </div>
+            <div class="actions"><button class="primary" type="submit">Save variation</button></div>
+          </form>
+        </article>"""
+
+
+def render_batches_section(recipe: sqlite3.Row, variations: list[sqlite3.Row], batches: list[sqlite3.Row]) -> str:
+    if batches:
+        cards = []
+        for batch in batches:
+            variation = batch["variation_name"] or "Base recipe"
+            rating = f'<span class="mini-pill">★ {esc(batch["rating"])}</span>' if batch["rating"] else ""
+            dough = f'<p><strong>Dough:</strong> {esc(batch["dough_notes"])}</p>' if batch["dough_notes"] else ""
+            result = f'<p><strong>Result:</strong> {esc(batch["result_notes"])}</p>' if batch["result_notes"] else ""
+            photo = f'<p><strong>Photos:</strong> {esc(batch["photo_notes"])}</p>' if batch["photo_notes"] else ""
+            tweak = f'<p><strong>Next:</strong> {esc(batch["next_tweak"])}</p>' if batch["next_tweak"] else ""
+            cards.append(
+                f"""
+                <article class="note-card">
+                  <div class="card-meta"><span class="mini-pill">{esc(batch['made_on'])}</span><span class="mini-pill">{esc(variation)}</span>{rating}</div>
+                  {dough}{result}{photo}{tweak}
+                </article>"""
+            )
+        cards_html = "".join(cards)
+    else:
+        cards_html = '<p class="empty-note">No bake logs yet. Log each bake here so results stay connected to the base recipe or variation.</p>'
+    options = '<option value="">Base recipe</option>' + "".join(
+        f'<option value="{variation["id"]}">{esc(variation["name"])}</option>' for variation in variations
+    )
+    today = datetime.now().date().isoformat()
+    return f"""
+        <article class="detail-panel full-width">
+          <h2>Bake log / results</h2>
+          <p class="panel-sub">Each actual cook or bake: what you changed, how it behaved, and what to tweak next time.</p>
+          <div class="note-grid">{cards_html}</div>
+          <form class="inline-form" method="post" action="/recipes/{recipe['id']}/batches">
+            <h3>Add bake result</h3>
+            <div class="form-grid">
+              <label>Date<input name="made_on" type="date" value="{today}" /></label>
+              <label>Variation<select name="variation_id">{options}</select></label>
+              <label>Rating<input name="rating" placeholder="e.g. 8/10" /></label>
+              <label class="full">Dough notes<textarea name="dough_notes" placeholder="Room temp, bulk time, hydration feel, shaping..."></textarea></label>
+              <label class="full">Result notes<textarea name="result_notes" placeholder="Oven spring, crumb, taste, crust, texture..."></textarea></label>
+              <label class="full">Photo notes<textarea name="photo_notes" placeholder="Photo filenames or what the photos show for now."></textarea></label>
+              <label class="full">Next tweak<textarea name="next_tweak" placeholder="What to change next time?"></textarea></label>
+            </div>
+            <div class="actions"><button class="primary" type="submit">Save bake log</button></div>
+          </form>
+        </article>"""
+
+
 def recipe_detail_page(username: str, recipe: sqlite3.Row) -> bytes:
+    variations = get_recipe_variations(int(recipe["id"]))
+    batches = get_recipe_batches(int(recipe["id"]))
+    variations_html = render_variations_section(recipe, variations)
+    batches_html = render_batches_section(recipe, variations, batches)
     tags = [t.strip() for t in str(recipe["tags"] or "").split(",") if t.strip()]
     pills = [recipe["category"], recipe["status"]] + tags
     if recipe["rating"]:
@@ -737,6 +963,8 @@ def recipe_detail_page(username: str, recipe: sqlite3.Row) -> bytes:
           <h2>{ingredient_heading}</h2>
           {ingredient_html}
         </article>
+        {variations_html}
+        {batches_html}
       </div>
     </section>
   </main>
@@ -940,9 +1168,9 @@ def parse_recipe_path(path: str) -> tuple[int, str] | None:
             return int(parts[1]), "detail"
         except ValueError:
             return None
-    if len(parts) == 3 and parts[0] == "recipes" and parts[2] == "edit":
+    if len(parts) == 3 and parts[0] == "recipes" and parts[2] in {"edit", "variations", "batches"}:
         try:
-            return int(parts[1]), "edit"
+            return int(parts[1]), parts[2]
         except ValueError:
             return None
     return None
@@ -1127,6 +1355,32 @@ class Handler(BaseHTTPRequestHandler):
         if not username:
             return
         recipe_route = parse_recipe_path(parsed.path)
+        if recipe_route and recipe_route[1] == "variations":
+            recipe_id = recipe_route[0]
+            fields = self.read_urlencoded_fields()
+            error = create_variation(recipe_id, fields)
+            if error:
+                recipe = get_recipe(recipe_id)
+                if not recipe:
+                    self.send_error(404)
+                    return
+                self.send_html(recipe_detail_page(username, recipe), status=400)
+                return
+            self.redirect(f"/recipes/{recipe_id}")
+            return
+        if recipe_route and recipe_route[1] == "batches":
+            recipe_id = recipe_route[0]
+            fields = self.read_urlencoded_fields()
+            error = create_batch(recipe_id, fields)
+            if error:
+                recipe = get_recipe(recipe_id)
+                if not recipe:
+                    self.send_error(404)
+                    return
+                self.send_html(recipe_detail_page(username, recipe), status=400)
+                return
+            self.redirect(f"/recipes/{recipe_id}")
+            return
         if recipe_route and recipe_route[1] == "edit":
             recipe_id = recipe_route[0]
             content_type = self.headers.get("Content-Type", "")
