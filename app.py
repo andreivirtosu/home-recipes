@@ -215,16 +215,26 @@ def page(message: str = "") -> bytes:
 
 
 class Handler(BaseHTTPRequestHandler):
+    def send_page_headers(self, body_len: int) -> None:
+        self.send_response(200)
+        self.send_header("Content-Type", "text/html; charset=utf-8")
+        self.send_header("Content-Length", str(body_len))
+        self.end_headers()
+
+    def do_HEAD(self) -> None:  # noqa: N802
+        parsed = urlparse(self.path)
+        if parsed.path != "/":
+            self.send_error(404)
+            return
+        self.send_page_headers(len(page()))
+
     def do_GET(self) -> None:  # noqa: N802
         parsed = urlparse(self.path)
         if parsed.path != "/":
             self.send_error(404)
             return
         body = page()
-        self.send_response(200)
-        self.send_header("Content-Type", "text/html; charset=utf-8")
-        self.send_header("Content-Length", str(len(body)))
-        self.end_headers()
+        self.send_page_headers(len(body))
         self.wfile.write(body)
 
     def do_POST(self) -> None:  # noqa: N802
