@@ -266,7 +266,7 @@ h1{margin:18px 0 14px;font-family:var(--display);font-weight:800;font-size:clamp
 .ingredient-shelf,.product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.product-card{border:1px solid var(--line);border-radius:16px;background:#fff;padding:16px;display:grid;gap:12px;transition:border-color .15s,box-shadow .15s,transform .15s}.product-card:hover{transform:translateY(-1px);box-shadow:var(--shadow);border-color:#ded4c7}.product-media{height:118px;border-radius:12px;background:linear-gradient(135deg,var(--sage-soft),var(--paper-soft));display:grid;place-items:center;color:var(--sage);font-size:34px;font-weight:800;overflow:hidden}.product-media img{width:100%;height:100%;object-fit:cover;display:block}.product-kind{display:inline-block;color:var(--accent-dark);font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.08em}.product-card h3{margin:0 0 8px;color:var(--ink);font-family:var(--display);font-size:19px;line-height:1.22;letter-spacing:-.025em}.product-card p{margin:0 0 14px;color:var(--muted);font-size:14px;line-height:1.48}.product-detail-media{min-height:260px;border-radius:14px;border:1px solid var(--line);background:linear-gradient(135deg,var(--sage-soft),var(--paper-soft));display:grid;place-items:center;color:var(--sage);font-size:58px;font-weight:800;overflow:hidden}.product-detail-media img{width:100%;height:100%;object-fit:cover}.source-link{color:var(--sage);font-weight:750;text-decoration:underline;text-underline-offset:3px}
 .form-card{border:1px solid var(--line);border-radius:18px;background:#fff;box-shadow:none;padding:20px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}label{display:grid;gap:7px;color:#5f635e;font-size:13px;font-weight:750}input,textarea,select{width:100%;border:1px solid var(--line);background:#fff;border-radius:10px;padding:12px 13px;font:inherit;font-weight:480;color:var(--ink);outline:none}input:focus,textarea:focus,select:focus{border-color:#d7a18f;box-shadow:0 0 0 3px rgba(214,111,85,.13)}textarea{min-height:94px;resize:vertical}.full{grid-column:1/-1}.notice{margin:14px 0 0;color:var(--accent-dark);font-weight:720}
 .feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.feature{border:1px solid var(--line);border-radius:16px;background:#fff;padding:20px;min-height:150px}.feature .icon{font-size:22px;margin-bottom:16px}.feature h3{margin:0 0 8px;font-family:var(--display);font-size:20px;letter-spacing:-.025em;color:var(--ink)}.feature p{margin:0;color:var(--muted);line-height:1.52}
-.recipe-detail{padding:30px 0 56px}.back-link{display:inline-flex;margin:0 0 16px;color:var(--muted);font-weight:700}.detail-hero{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:24px;align-items:stretch;border:1px solid var(--line);border-radius:18px;background:#fff;padding:20px}.detail-hero h1{margin-top:16px}.detail-summary{font-size:17px;line-height:1.65;color:var(--muted);max-width:760px;text-wrap:pretty}.detail-photo{height:auto;min-height:220px;border-radius:14px;overflow:hidden;border:0}.detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}.detail-grid.single{grid-template-columns:1fr}.detail-panel{border:1px solid var(--line);border-radius:16px;background:#fff;padding:20px}.detail-panel h2{margin:0 0 12px;font-family:var(--display);font-size:28px;font-weight:800;letter-spacing:-.03em;color:var(--ink)}.detail-panel p{margin:0;color:var(--text);font-size:16px;line-height:1.7;white-space:pre-wrap}.detail-ingredients{margin:0;padding-left:20px;display:grid;gap:10px;color:var(--text);line-height:1.5}.ingredient-table{width:100%;border-collapse:separate;border-spacing:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff}.ingredient-table th,.ingredient-table td{padding:12px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line);font-size:15px;line-height:1.35}.ingredient-table th{background:var(--paper-soft);color:var(--sage);font-size:12px;text-transform:uppercase;letter-spacing:.07em}.ingredient-table tr:last-child td{border-bottom:0}.ingredient-table td:first-child{font-weight:760;color:var(--ink)}.ingredient-table .note{color:var(--muted)}footer{padding:34px 0;color:var(--soft);font-size:14px}
+.recipe-detail{padding:30px 0 56px}.back-link{display:inline-flex;margin:0 0 16px;color:var(--muted);font-weight:700}.detail-hero{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:24px;align-items:stretch;border:1px solid var(--line);border-radius:18px;background:#fff;padding:20px}.detail-hero h1{margin-top:16px}.detail-summary{font-size:17px;line-height:1.65;color:var(--muted);max-width:760px;text-wrap:pretty}.detail-photo{height:auto;min-height:220px;border-radius:14px;overflow:hidden;border:0}.detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}.detail-grid.single{grid-template-columns:1fr}.detail-panel{border:1px solid var(--line);border-radius:16px;background:#fff;padding:20px}.detail-panel h2{margin:0 0 12px;font-family:var(--display);font-size:28px;font-weight:800;letter-spacing:-.03em;color:var(--ink)}.detail-panel p{margin:0;color:var(--text);font-size:16px;line-height:1.7;white-space:pre-wrap}.detail-ingredients{margin:0;padding-left:20px;display:grid;gap:10px;color:var(--text);line-height:1.5}.ingredient-table{width:100%;border-collapse:separate;border-spacing:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff}.ingredient-table th,.ingredient-table td{padding:12px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line);font-size:15px;line-height:1.35}.ingredient-table th{background:var(--paper-soft);color:var(--sage);font-size:12px;text-transform:uppercase;letter-spacing:.07em}.ingredient-table tr:last-child td{border-bottom:0}.ingredient-table td:first-child{font-weight:760;color:var(--ink)}.ingredient-table .stage{color:var(--sage);font-weight:820}.ingredient-table .note{color:var(--muted)}.sourdough-ingredient-table th:nth-child(1){width:19%}.sourdough-ingredient-table th:nth-child(2){width:24%}.sourdough-ingredient-table th:nth-child(3){width:18%}.sourdough-ingredient-table th:nth-child(4){width:12%}footer{padding:34px 0;color:var(--soft);font-size:14px}
 @media(max-width:900px){
   body{overflow-x:hidden}
   .shell{width:min(100% - 28px,1080px)}
@@ -580,26 +580,35 @@ def render_recipe_card(recipe: sqlite3.Row) -> str:
 
 def render_sourdough_ingredient_table() -> str:
     rows = [
-        ("Total flour", "900g", "100%", "Includes levain and autolyse flour."),
-        ("Total water", "684g", "76%", "82g in levain + 552g autolyse + 50g final mix."),
-        ("Salt", "16g", "1.8%", "Add during final mix."),
-        ("Mature starter", "16g", "1.8%", "Seeds the evening levain."),
-        ("Levain build", "180g", "20%", "82g flour + 82g water + 16g starter; build in the evening."),
-        ("Prefermented flour", "82g", "9.1%", "Flour contained in the levain."),
-        ("Yield", "~1615g dough", "—", "Two loaves of about 800g each."),
+        ("Starter upkeep", "Fridge starter reserve", "40g", "—", "Keep in fridge between bakes."),
+        ("Starter upkeep", "Starter used for levain", "20g", "—", "Take out in the evening before mixing dough."),
+        ("Starter upkeep", "Refresh: starter + flour + water", "20g + 20g + 20g = 60g", "—", "Rest 30-60 min, then return 40g to fridge."),
+        ("Levain, evening day 1", "Bread flour", "82g", "9.1%", "Prefermented flour."),
+        ("Levain, evening day 1", "Water", "82g", "9.1%", "Equal weight to levain flour."),
+        ("Levain, evening day 1", "Mature starter", "16g", "1.8%", "Seeds the levain; leave overnight."),
+        ("Levain, evening day 1", "Levain subtotal", "180g", "20%", "Use all of it in the final dough next morning."),
+        ("Autolyse, morning day 2", "Bread flour", "818g", "90.9%", "Main flour addition."),
+        ("Autolyse, morning day 2", "Water", "552g", "61.3%", "Adjusted so total dough hydration is 76%."),
+        ("Final mix, morning day 2", "Ripe levain", "180g", "20%", "Add after autolyse."),
+        ("Final mix, morning day 2", "Additional water", "50g", "5.6%", "Hold back/add during final mix."),
+        ("Final mix, morning day 2", "Fine sea salt", "16g", "1.8%", "Add during final mix."),
+        ("Total formula", "Total flour", "900g", "100%", "82g levain flour + 818g autolyse flour."),
+        ("Total formula", "Total water", "684g", "76%", "82g levain water + 552g autolyse water + 50g final water."),
+        ("Total formula", "Total dough", "~1616g", "—", "Divide into two loaves of about 808g each."),
     ]
     body = "".join(
         "<tr>"
-        f"<td data-label=\"Ingredient\">{esc(name)}</td>"
-        f"<td data-label=\"Amount\">{esc(amount)}</td>"
-        f"<td data-label=\"Baker %\">{esc(percent)}</td>"
-        f"<td class=\"note\" data-label=\"Notes\">{esc(note)}</td>"
+        f'<td class="stage" data-label="Stage">{esc(stage)}</td>'
+        f'<td data-label="Ingredient / product">{esc(name)}</td>'
+        f'<td data-label="Amount">{esc(amount)}</td>'
+        f'<td data-label="Baker %">{esc(percent)}</td>'
+        f'<td class="note" data-label="Notes">{esc(note)}</td>'
         "</tr>"
-        for name, amount, percent, note in rows
+        for stage, name, amount, percent, note in rows
     )
     return f"""
-          <table class="ingredient-table">
-            <thead><tr><th>Ingredient</th><th>Amount</th><th>Baker %</th><th>Notes</th></tr></thead>
+          <table class="ingredient-table sourdough-ingredient-table">
+            <thead><tr><th>Stage</th><th>Ingredient / product</th><th>Amount</th><th>Baker %</th><th>Notes</th></tr></thead>
             <tbody>{body}</tbody>
           </table>"""
 
@@ -720,9 +729,10 @@ def recipe_detail_page(username: str, recipe: sqlite3.Row) -> bytes:
         pills.insert(0, f"★ {recipe['rating']}")
     pill_html = "".join(f'<span class="mini-pill">{esc(p)}</span>' for p in pills if p)
     ingredient_lines = [line.strip() for line in str(recipe["ingredients"] or "").splitlines() if line.strip()]
-    if str(recipe["title"] or "").strip().lower() in {"simple weekday sourdough bread", "simple weekday sourdough bread".lower()}:
+    is_sourdough = str(recipe["title"] or "").strip().lower() == "simple weekday sourdough bread"
+    if is_sourdough:
         ingredient_html = render_sourdough_ingredient_table()
-        ingredient_heading = "Formula table"
+        ingredient_heading = "Ingredients / formula"
     else:
         ingredient_html = "<ul class=\"detail-ingredients\">" + ("".join(f"<li>{esc(line)}</li>" for line in ingredient_lines) or "<li>No ingredients recorded yet.</li>") + "</ul>"
         ingredient_heading = "Ingredients / product references"
@@ -739,7 +749,7 @@ def recipe_detail_page(username: str, recipe: sqlite3.Row) -> bytes:
     if not full_description:
         hero_summary = esc(hero_summary_plain) or "No short description recorded yet."
         hero_summary_html = f'<p class="detail-summary">{hero_summary}</p>'
-    grid_class = "" if full_description else " single"
+    grid_class = " single" if (is_sourdough or not full_description) else ""
     color = esc(recipe["color"])
     photo = esc(recipe["cover_photo"] if "cover_photo" in recipe.keys() else "")
     detail_photo = f'<div class="detail-photo thumb photo-thumb"><img src="{photo}" alt="{esc(recipe["title"])} photo" /></div>' if photo else f'<div class="detail-photo thumb {color}"></div>'
