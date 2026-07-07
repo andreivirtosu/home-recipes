@@ -187,6 +187,36 @@
     .section .sub { color: var(--muted); max-width: 520px; line-height: 1.5; }
 
     .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .library-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .recipe-card {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      background: rgba(255,255,255,.68);
+      box-shadow: 0 14px 40px rgba(64,42,24,.07);
+    }
+    .thumb {
+      height: 154px;
+      background: linear-gradient(135deg, #dcb88c, #f5e6c8);
+      position: relative;
+    }
+    .thumb::after {
+      content: "";
+      position: absolute;
+      inset: 26px 42px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 46% 42%, rgba(255,255,255,.68) 0 12%, transparent 12.5%), var(--cream);
+      box-shadow: 0 14px 30px rgba(64,42,24,.13);
+    }
+    .thumb.chocolate { background: linear-gradient(135deg, #3b241d, #9c5b3b 54%, #d7b085); }
+    .thumb.pistachio { background: linear-gradient(135deg, #7f9764, #e3d4a2); }
+    .thumb.banana { background: linear-gradient(135deg, #ead26b, #fff0b5); }
+    .thumb.yogurt { background: linear-gradient(135deg, #cedce4, #fffaf0); }
+    .recipe-card-body { padding: 18px; }
+    .recipe-card h3 { margin: 0 0 8px; font-size: 19px; letter-spacing: -.035em; }
+    .recipe-card p { margin: 0 0 14px; color: var(--muted); line-height: 1.42; font-size: 14px; }
+    .card-meta { display: flex; flex-wrap: wrap; gap: 8px; }
+    .mini-pill { padding: 6px 9px; border-radius: 999px; background: #f4eadc; color: #74412a; font-size: 12px; font-weight: 720; }
     .feature {
       border: 1px solid var(--line);
       border-radius: 26px;
@@ -217,6 +247,7 @@
       nav { display: none; }
       .hero, .recipe-preview, .roadmap { grid-template-columns: 1fr; }
       .grid { grid-template-columns: 1fr; }
+      .library-grid { grid-template-columns: 1fr; }
       .photo { min-height: 270px; }
       .section-head { display: block; }
     }
@@ -229,9 +260,9 @@
       <span>Home Recipes</span>
     </a>
     <nav aria-label="Primary navigation">
+      <a href="#library">Library</a>
       <a href="#features">Features</a>
       <a href="#prototype">Prototype</a>
-      <a href="#roadmap">Roadmap</a>
     </nav>
   </header>
 
@@ -271,6 +302,63 @@
           </div>
         </div>
       </aside>
+    </section>
+
+    <section id="library" class="section">
+      <div class="section-head">
+        <h2>Recipe library.</h2>
+        <p class="sub">Seeded from the existing Obsidian ice-cream notes. Next step is turning these cards into editable recipes with real batch logs and photos.</p>
+      </div>
+      <div class="library-grid">
+        <article class="recipe-card">
+          <div class="thumb chocolate"></div>
+          <div class="recipe-card-body">
+            <h3>Rich chocolate ice cream</h3>
+            <p>Dense, premium chocolate direction for CubeItaly experiments.</p>
+            <div class="card-meta"><span class="mini-pill">Ice cream</span><span class="mini-pill">CubeItaly</span></div>
+          </div>
+        </article>
+        <article class="recipe-card">
+          <div class="thumb chocolate"></div>
+          <div class="recipe-card-body">
+            <h3>Kid-friendly chocolate gelato</h3>
+            <p>A softer, family-friendly chocolate profile to compare against richer adult batches.</p>
+            <div class="card-meta"><span class="mini-pill">Gelato</span><span class="mini-pill">Kid-approved?</span></div>
+          </div>
+        </article>
+        <article class="recipe-card">
+          <div class="thumb pistachio"></div>
+          <div class="recipe-card-body">
+            <h3>Pistachio Sicilian-style gelato</h3>
+            <p>The flagship iteration target: clean formula, batch notes, and next tweaks.</p>
+            <div class="card-meta"><span class="mini-pill">Gelato</span><span class="mini-pill">Best version</span></div>
+          </div>
+        </article>
+        <article class="recipe-card">
+          <div class="thumb yogurt"></div>
+          <div class="recipe-card-body">
+            <h3>Adult Greek frozen yogurt</h3>
+            <p>Tangy adult profile with texture and sweetness notes to dial in.</p>
+            <div class="card-meta"><span class="mini-pill">Frozen yogurt</span><span class="mini-pill">Adult</span></div>
+          </div>
+        </article>
+        <article class="recipe-card">
+          <div class="thumb banana"></div>
+          <div class="recipe-card-body">
+            <h3>Banana milk gelato</h3>
+            <p>Fresh banana process and formulation target for small-machine batches.</p>
+            <div class="card-meta"><span class="mini-pill">Gelato</span><span class="mini-pill">Fruit</span></div>
+          </div>
+        </article>
+        <article class="recipe-card">
+          <div class="thumb"></div>
+          <div class="recipe-card-body">
+            <h3>Add a new recipe</h3>
+            <p>Placeholder for the MVP form: title, ingredients, steps, photos, and first batch.</p>
+            <div class="card-meta"><span class="mini-pill">Coming next</span></div>
+          </div>
+        </article>
+      </div>
     </section>
 
     <section id="features" class="section">
