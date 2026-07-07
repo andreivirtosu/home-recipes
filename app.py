@@ -154,7 +154,7 @@ def connect() -> sqlite3.Connection:
 def seed_ingredients(title: str) -> str:
     seeds = {
         "Pistachio Sicilian-style gelato": "390g Migros Bio Vollmilch 3.5%\n72g sugar\n24g dextrose\n72g 100% pistachio paste\n0.6g fine sea salt",
-        "Rich chocolate ice cream": "For 2 x 600g CubeItaly batches / ~1200g total base:\n500g cream 35% → 250g per churn\n297g whole milk 3.5% → 148.5g per churn\n130g sugar → 65g per churn\n70g dextrose → 35g per churn\n55g Cacao Barry Extra Brute cocoa powder → 27.5g per churn\n115g Callebaut 70.5% dark chocolate → 57.5g per churn\n30g skimmed milk powder → 15g per churn\n1.5g fine sea salt → 0.75g per churn\nOptional: 0.6-0.8g guar gum total → 0.3-0.4g per churn",
+        "Rich chocolate ice cream": "For 2 x 600g CubeItaly batches / ~1200g total base:\n500g cream 35% → 250g per churn\n297g whole milk 3.5% → 148.5g per churn\n130g sugar → 65g per churn\n70g dextrose → 35g per churn\n55g → Cacao Barry Extra Brute cocoa powder → 27.5g per churn\n115g → Callebaut 70.5% dark chocolate → 57.5g per churn\n30g skimmed milk powder → 15g per churn\n1.5g fine sea salt → 0.75g per churn\nOptional: 0.6-0.8g guar gum total → 0.3-0.4g per churn",
         "Kid-friendly chocolate gelato": "Whole milk\nCream\nCocoa powder\nChocolate\nSugar + dextrose",
         "Adult Greek frozen yogurt": "Fage 5% Greek yogurt\nWhole milk\nCream\nSugar + dextrose\nLemon or salt if needed",
         "Banana milk gelato": "Very ripe banana\nWhole milk\nCream\nSugar + dextrose\nFine sea salt",
@@ -562,6 +562,8 @@ def page(username: str, message: str = "") -> bytes:
         <article class="product-card"><span class="product-kind">Milk</span><h3>Migros Bio Vollmilch 3.5%</h3><p>Default whole milk reference for gelato formulas.</p><div class="card-meta"><span class="mini-pill">Used in pistachio</span><span class="mini-pill">Swiss grocery</span></div></article>
         <article class="product-card"><span class="product-kind">Cream</span><h3>Coop Vollrahm 35%</h3><p>Reference cream product for richer ice cream and gelato bases.</p><div class="card-meta"><span class="mini-pill">Chocolate</span><span class="mini-pill">Yogurt</span></div></article>
         <article class="product-card"><span class="product-kind">Yogurt</span><h3>Fage Total 5%</h3><p>Greek yogurt baseline for adult frozen yogurt.</p><div class="card-meta"><span class="mini-pill">Frozen yogurt</span></div></article>
+        <article class="product-card"><span class="product-kind">Cocoa powder</span><h3>Cacao Barry Extra Brute</h3><p>High-fat Dutch-process cocoa powder for the rich chocolate ice cream. Recipe reference: 55g total base, 27.5g per CubeItaly churn.</p><div class="card-meta"><span class="mini-pill">Rich chocolate ice cream</span><span class="mini-pill">Chocolate depth</span></div></article>
+        <article class="product-card"><span class="product-kind">Dark chocolate</span><h3>Callebaut 70.5%</h3><p>Couverture chocolate for body and flavour in the rich chocolate ice cream. Recipe reference: 115g total base, 57.5g per CubeItaly churn.</p><div class="card-meta"><span class="mini-pill">Rich chocolate ice cream</span><span class="mini-pill">Cocoa butter</span></div></article>
         <article class="product-card"><span class="product-kind">Flavor</span><h3>100% pistachio paste</h3><p>Unsweetened paste; keep separate from sweet pistachio cream.</p><div class="card-meta"><span class="mini-pill">Pistachio gelato</span></div></article>
       </div>
     </section>
