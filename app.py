@@ -44,7 +44,7 @@ CSS = r"""
   --shadow:0 18px 54px rgba(54,38,25,.11);--shadow-soft:0 8px 26px rgba(54,38,25,.07);
   --radius:24px;--display:Georgia,"Iowan Old Style","New York",serif;
 }
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",sans-serif;color:var(--text);background:linear-gradient(180deg,#fffaf2 0%,var(--bg) 48%,#f4ecdf 100%);min-height:100vh;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}body:before{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(circle at 8% -8%,rgba(212,146,76,.20),transparent 30rem),radial-gradient(circle at 92% 2%,rgba(102,125,82,.13),transparent 28rem)}a{color:inherit;text-decoration:none}.shell{width:min(1120px,calc(100% - 40px));margin:0 auto}header{position:sticky;top:0;z-index:10;padding:18px 0 12px;backdrop-filter:blur(18px);display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;align-items:center;gap:11px;font-weight:760;letter-spacing:-.02em;color:var(--ink)}.mark{width:36px;height:36px;border-radius:12px;background:linear-gradient(135deg,#b96a3e,#763b25);box-shadow:0 10px 24px rgba(157,79,47,.24);display:grid;place-items:center;color:#fff8ef;font-size:18px}nav{display:flex;gap:6px;color:var(--muted);font-size:14px;font-weight:640}nav a{padding:10px 12px;border-radius:999px}nav a:hover{background:rgba(255,255,255,.72);color:var(--ink)}.nav-user{padding:10px 12px;border-radius:999px;background:rgba(255,255,255,.58);color:var(--accent-2);font-weight:760}.login-shell{min-height:100vh;display:grid;place-items:center;padding:28px}.login-card{width:min(460px,100%);border:1px solid var(--line);border-radius:34px;background:rgba(255,253,248,.86);box-shadow:var(--shadow);padding:28px}.login-card h1{font-size:clamp(42px,7vw,62px);margin:18px 0 12px}.login-card .lead{font-size:16px}.login-form{display:grid;gap:14px;margin-top:24px}.login-error{margin:14px 0 0;color:var(--accent);font-weight:720}.hero{display:grid;grid-template-columns:minmax(0,1fr) 430px;gap:44px;align-items:center;padding:54px 0 38px}.eyebrow{display:inline-flex;gap:8px;align-items:center;padding:8px 12px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.68);color:var(--accent-2);font-weight:720;font-size:13px;box-shadow:var(--shadow-soft)}h1{margin:22px 0 18px;font-family:var(--display);font-weight:520;font-size:clamp(48px,6.6vw,82px);line-height:1.02;letter-spacing:-.048em;color:var(--ink);max-width:760px;text-wrap:balance}.lead{margin:0;color:var(--muted);font-size:clamp(17px,1.7vw,21px);line-height:1.62;max-width:640px;text-wrap:pretty}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.button,button{border:1px solid transparent;border-radius:999px;min-height:46px;padding:12px 17px;font-weight:720;display:inline-flex;align-items:center;justify-content:center;gap:10px;box-shadow:var(--shadow-soft);cursor:pointer;font:inherit}.primary{background:var(--ink);color:#fff8ef}.secondary{background:rgba(255,255,255,.78);border-color:var(--line);color:var(--ink)}.app-card{border:1px solid var(--line);background:rgba(255,253,248,.82);backdrop-filter:blur(18px);border-radius:32px;padding:16px;box-shadow:var(--shadow);overflow:hidden}.toolbar{display:flex;justify-content:space-between;align-items:center;padding:8px 6px 16px}.dots{display:flex;gap:7px}.dots span{width:10px;height:10px;border-radius:50%;background:#dfd0bf}.status{color:var(--soft);font-size:13px;font-weight:680}.section{padding:34px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:18px}.section h2{margin:0;font-family:var(--display);font-weight:520;font-size:clamp(31px,3.6vw,46px);line-height:1.08;letter-spacing:-.035em;color:var(--ink);text-wrap:balance}.section .sub{color:var(--muted);max-width:570px;line-height:1.58;text-wrap:pretty}.library-tools{display:grid;grid-template-columns:1fr auto;gap:12px;margin:0 0 18px}.search{border:1px solid var(--line);background:rgba(255,255,255,.82);border-radius:18px;padding:14px 16px;font:inherit;color:var(--ink);box-shadow:var(--shadow-soft)}.search::placeholder,input::placeholder,textarea::placeholder{color:#b1a397;font-weight:430}.filter-note{align-self:center;color:var(--muted);font-size:14px}.library-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.recipe-card{overflow:hidden;border:1px solid var(--line);border-radius:26px;background:rgba(255,255,255,.76);box-shadow:var(--shadow-soft);transition:transform .16s ease,box-shadow .16s ease,border-color .16s ease}.recipe-card:hover{transform:translateY(-2px);box-shadow:0 18px 44px rgba(54,38,25,.11);border-color:rgba(157,79,47,.22)}.recipe-card.add-card{display:grid;place-items:center;min-height:306px;border-style:dashed;background:rgba(255,253,248,.58)}.add-card-inner{text-align:center;padding:24px}.plus{width:48px;height:48px;border-radius:16px;background:var(--ink);color:#fff8ef;display:grid;place-items:center;margin:0 auto 14px;font-size:24px}.thumb{height:136px;background:linear-gradient(135deg,#dcb88c,#f5e6c8);position:relative}.thumb:after{content:"";position:absolute;inset:28px 54px;border-radius:999px;background:radial-gradient(circle at 46% 42%,rgba(255,255,255,.68) 0 12%,transparent 12.5%),var(--cream);box-shadow:0 12px 26px rgba(64,42,24,.12)}.thumb:before{content:"";position:absolute;left:22px;bottom:18px;width:58px;height:10px;border-radius:999px;background:rgba(255,255,255,.38)}.thumb.chocolate{background:linear-gradient(135deg,#332019,#8f5438 56%,#d3ad85)}.thumb.pistachio{background:linear-gradient(135deg,#6f8758,#e4d5a4)}.thumb.banana{background:linear-gradient(135deg,#e5c958,#fff0b5)}.thumb.yogurt{background:linear-gradient(135deg,#c9d8df,#fffaf0)}.recipe-card-body{padding:17px 18px 18px}.recipe-card h3{margin:0 0 8px;font-size:20px;line-height:1.22;letter-spacing:-.025em;color:var(--ink);text-wrap:balance}.recipe-card p{margin:0 0 14px;color:var(--muted);line-height:1.52;font-size:14.5px}.ingredient-list{list-style:none;margin:0 0 15px;padding:10px 0 0;border-top:1px solid rgba(54,38,25,.08);display:grid;gap:6px}.ingredient-list li{font-size:13px;line-height:1.35;color:#4b3d34;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.ingredient-list .more{color:var(--soft);font-weight:680}.card-meta{display:flex;flex-wrap:wrap;gap:7px}.mini-pill{padding:5px 8px;border-radius:999px;background:#f1e6d7;color:#744632;font-size:11.5px;font-weight:680;letter-spacing:.005em}.ingredient-shelf{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.product-card{border:1px solid var(--line);border-radius:24px;background:rgba(255,255,255,.70);padding:18px;box-shadow:var(--shadow-soft)}.product-kind{display:inline-block;margin-bottom:18px;color:var(--accent-2);font-size:12px;font-weight:760;text-transform:uppercase;letter-spacing:.08em}.product-card h3{margin:0 0 8px;color:var(--ink);font-size:19px;line-height:1.22;letter-spacing:-.025em}.product-card p{margin:0 0 14px;color:var(--muted);font-size:14px;line-height:1.48}.form-card{border:1px solid var(--line);border-radius:30px;background:rgba(255,255,255,.78);box-shadow:var(--shadow);padding:22px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}label{display:grid;gap:7px;color:#5d5048;font-size:13px;font-weight:720}input,textarea,select{width:100%;border:1px solid var(--line);background:#fffdf9;border-radius:15px;padding:12px 13px;font:inherit;font-weight:480;color:var(--ink);outline:none}input:focus,textarea:focus,select:focus{border-color:rgba(157,79,47,.42);box-shadow:0 0 0 4px rgba(157,79,47,.10)}textarea{min-height:94px;resize:vertical}.full{grid-column:1/-1}.notice{margin:14px 0 0;color:var(--accent);font-weight:720}.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.feature{border:1px solid var(--line);border-radius:24px;background:rgba(255,255,255,.62);padding:22px;min-height:164px;box-shadow:var(--shadow-soft)}.feature .icon{font-size:24px;margin-bottom:18px}.feature h3{margin:0 0 8px;font-size:20px;letter-spacing:-.025em;color:var(--ink)}.feature p{margin:0;color:var(--muted);line-height:1.52}footer{padding:34px 0;color:var(--soft);font-size:14px}@media(max-width:900px){header{position:relative}nav{display:none}.hero{grid-template-columns:1fr;padding-top:34px}.library-tools,.form-grid{grid-template-columns:1fr}.library-grid,.feature-grid,.ingredient-shelf{grid-template-columns:1fr}.section-head{display:block}.app-card{max-width:520px}.shell{width:min(100% - 28px,1120px)}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",sans-serif;color:var(--text);background:linear-gradient(180deg,#fffaf2 0%,var(--bg) 48%,#f4ecdf 100%);min-height:100vh;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}body:before{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(circle at 8% -8%,rgba(212,146,76,.20),transparent 30rem),radial-gradient(circle at 92% 2%,rgba(102,125,82,.13),transparent 28rem)}a{color:inherit;text-decoration:none}.shell{width:min(1120px,calc(100% - 40px));margin:0 auto}header{position:sticky;top:0;z-index:10;padding:18px 0 12px;backdrop-filter:blur(18px);display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;align-items:center;gap:11px;font-weight:760;letter-spacing:-.02em;color:var(--ink)}.mark{width:36px;height:36px;border-radius:12px;background:linear-gradient(135deg,#b96a3e,#763b25);box-shadow:0 10px 24px rgba(157,79,47,.24);display:grid;place-items:center;color:#fff8ef;font-size:18px}nav{display:flex;gap:6px;color:var(--muted);font-size:14px;font-weight:640}nav a{padding:10px 12px;border-radius:999px}nav a:hover{background:rgba(255,255,255,.72);color:var(--ink)}.nav-user{padding:10px 12px;border-radius:999px;background:rgba(255,255,255,.58);color:var(--accent-2);font-weight:760}.login-shell{min-height:100vh;display:grid;place-items:center;padding:28px}.login-card{width:min(460px,100%);border:1px solid var(--line);border-radius:34px;background:rgba(255,253,248,.86);box-shadow:var(--shadow);padding:28px}.login-card h1{font-size:clamp(42px,7vw,62px);margin:18px 0 12px}.login-card .lead{font-size:16px}.login-form{display:grid;gap:14px;margin-top:24px}.login-error{margin:14px 0 0;color:var(--accent);font-weight:720}.hero{display:grid;grid-template-columns:minmax(0,1fr) 430px;gap:44px;align-items:center;padding:54px 0 38px}.eyebrow{display:inline-flex;gap:8px;align-items:center;padding:8px 12px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.68);color:var(--accent-2);font-weight:720;font-size:13px;box-shadow:var(--shadow-soft)}h1{margin:22px 0 18px;font-family:var(--display);font-weight:520;font-size:clamp(48px,6.6vw,82px);line-height:1.02;letter-spacing:-.048em;color:var(--ink);max-width:760px;text-wrap:balance}.lead{margin:0;color:var(--muted);font-size:clamp(17px,1.7vw,21px);line-height:1.62;max-width:640px;text-wrap:pretty}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.button,button{border:1px solid transparent;border-radius:999px;min-height:46px;padding:12px 17px;font-weight:720;display:inline-flex;align-items:center;justify-content:center;gap:10px;box-shadow:var(--shadow-soft);cursor:pointer;font:inherit}.primary{background:var(--ink);color:#fff8ef}.secondary{background:rgba(255,255,255,.78);border-color:var(--line);color:var(--ink)}.app-card{border:1px solid var(--line);background:rgba(255,253,248,.82);backdrop-filter:blur(18px);border-radius:32px;padding:16px;box-shadow:var(--shadow);overflow:hidden}.toolbar{display:flex;justify-content:space-between;align-items:center;padding:8px 6px 16px}.dots{display:flex;gap:7px}.dots span{width:10px;height:10px;border-radius:50%;background:#dfd0bf}.status{color:var(--soft);font-size:13px;font-weight:680}.section{padding:34px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:18px}.section h2{margin:0;font-family:var(--display);font-weight:520;font-size:clamp(31px,3.6vw,46px);line-height:1.08;letter-spacing:-.035em;color:var(--ink);text-wrap:balance}.section .sub{color:var(--muted);max-width:570px;line-height:1.58;text-wrap:pretty}.library-tools{display:grid;grid-template-columns:1fr auto;gap:12px;margin:0 0 18px}.search{border:1px solid var(--line);background:rgba(255,255,255,.82);border-radius:18px;padding:14px 16px;font:inherit;color:var(--ink);box-shadow:var(--shadow-soft)}.search::placeholder,input::placeholder,textarea::placeholder{color:#b1a397;font-weight:430}.filter-note{align-self:center;color:var(--muted);font-size:14px}.library-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.recipe-card{overflow:hidden;border:1px solid var(--line);border-radius:26px;background:rgba(255,255,255,.76);box-shadow:var(--shadow-soft);transition:transform .16s ease,box-shadow .16s ease,border-color .16s ease}.recipe-card:hover{transform:translateY(-2px);box-shadow:0 18px 44px rgba(54,38,25,.11);border-color:rgba(157,79,47,.22)}.recipe-card.add-card{display:grid;place-items:center;min-height:306px;border-style:dashed;background:rgba(255,253,248,.58)}.add-card-inner{text-align:center;padding:24px}.plus{width:48px;height:48px;border-radius:16px;background:var(--ink);color:#fff8ef;display:grid;place-items:center;margin:0 auto 14px;font-size:24px}.thumb{height:136px;background:linear-gradient(135deg,#dcb88c,#f5e6c8);position:relative}.thumb:after{content:"";position:absolute;inset:28px 54px;border-radius:999px;background:radial-gradient(circle at 46% 42%,rgba(255,255,255,.68) 0 12%,transparent 12.5%),var(--cream);box-shadow:0 12px 26px rgba(64,42,24,.12)}.thumb:before{content:"";position:absolute;left:22px;bottom:18px;width:58px;height:10px;border-radius:999px;background:rgba(255,255,255,.38)}.thumb.chocolate{background:linear-gradient(135deg,#332019,#8f5438 56%,#d3ad85)}.thumb.pistachio{background:linear-gradient(135deg,#6f8758,#e4d5a4)}.thumb.banana{background:linear-gradient(135deg,#e5c958,#fff0b5)}.thumb.yogurt{background:linear-gradient(135deg,#c9d8df,#fffaf0)}.recipe-card-body{padding:17px 18px 18px}.recipe-card h3{margin:0 0 8px;font-size:20px;line-height:1.22;letter-spacing:-.025em;color:var(--ink);text-wrap:balance}.recipe-card p{margin:0 0 14px;color:var(--muted);line-height:1.52;font-size:14.5px}.ingredient-list{list-style:none;margin:0 0 15px;padding:10px 0 0;border-top:1px solid rgba(54,38,25,.08);display:grid;gap:6px}.ingredient-list li{font-size:13px;line-height:1.35;color:#4b3d34;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.ingredient-list .more{color:var(--soft);font-weight:680}.card-meta{display:flex;flex-wrap:wrap;gap:7px}.mini-pill{padding:5px 8px;border-radius:999px;background:#f1e6d7;color:#744632;font-size:11.5px;font-weight:680;letter-spacing:.005em}.ingredient-shelf{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.product-card{border:1px solid var(--line);border-radius:24px;background:rgba(255,255,255,.70);padding:18px;box-shadow:var(--shadow-soft)}.product-kind{display:inline-block;margin-bottom:18px;color:var(--accent-2);font-size:12px;font-weight:760;text-transform:uppercase;letter-spacing:.08em}.product-card h3{margin:0 0 8px;color:var(--ink);font-size:19px;line-height:1.22;letter-spacing:-.025em}.product-card p{margin:0 0 14px;color:var(--muted);font-size:14px;line-height:1.48}.form-card{border:1px solid var(--line);border-radius:30px;background:rgba(255,255,255,.78);box-shadow:var(--shadow);padding:22px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}label{display:grid;gap:7px;color:#5d5048;font-size:13px;font-weight:720}input,textarea,select{width:100%;border:1px solid var(--line);background:#fffdf9;border-radius:15px;padding:12px 13px;font:inherit;font-weight:480;color:var(--ink);outline:none}input:focus,textarea:focus,select:focus{border-color:rgba(157,79,47,.42);box-shadow:0 0 0 4px rgba(157,79,47,.10)}textarea{min-height:94px;resize:vertical}.full{grid-column:1/-1}.notice{margin:14px 0 0;color:var(--accent);font-weight:720}.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.feature{border:1px solid var(--line);border-radius:24px;background:rgba(255,255,255,.62);padding:22px;min-height:164px;box-shadow:var(--shadow-soft)}.feature .icon{font-size:24px;margin-bottom:18px}.feature h3{margin:0 0 8px;font-size:20px;letter-spacing:-.025em;color:var(--ink)}.feature p{margin:0;color:var(--muted);line-height:1.52}.recipe-detail{padding:34px 0 58px}.back-link{display:inline-flex;margin:0 0 18px;color:var(--muted);font-weight:720}.detail-hero{display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:30px;align-items:stretch;border:1px solid var(--line);border-radius:34px;background:rgba(255,253,248,.78);box-shadow:var(--shadow);padding:24px}.detail-hero h1{margin-top:18px}.detail-summary{font-size:20px;line-height:1.62;color:var(--muted);max-width:760px;text-wrap:pretty}.detail-photo{height:auto;min-height:260px;border-radius:26px;overflow:hidden}.detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:18px}.detail-panel{border:1px solid var(--line);border-radius:26px;background:rgba(255,255,255,.72);box-shadow:var(--shadow-soft);padding:22px}.detail-panel h2{margin:0 0 12px;font-family:var(--display);font-size:30px;font-weight:520;letter-spacing:-.03em;color:var(--ink)}.detail-panel p{margin:0;color:var(--text);font-size:17px;line-height:1.7}.detail-ingredients{margin:0;padding-left:20px;display:grid;gap:10px;color:var(--text);line-height:1.5}footer{padding:34px 0;color:var(--soft);font-size:14px}@media(max-width:900px){header{position:relative}nav{display:none}.hero,.detail-hero,.detail-grid{grid-template-columns:1fr;padding-top:34px}.library-tools,.form-grid{grid-template-columns:1fr}.library-grid,.feature-grid,.ingredient-shelf{grid-template-columns:1fr}.section-head{display:block}.app-card{max-width:520px}.shell{width:min(100% - 28px,1120px)}}
 """
 
 
@@ -179,7 +179,12 @@ def get_recipes() -> list[sqlite3.Row]:
         return list(con.execute("SELECT * FROM recipes ORDER BY updated_at DESC, title ASC"))
 
 
-def create_recipe(fields: dict[str, str]) -> str | None:
+def get_recipe(recipe_id: int) -> sqlite3.Row | None:
+    with connect() as con:
+        return con.execute("SELECT * FROM recipes WHERE id = ?", (recipe_id,)).fetchone()
+
+
+def recipe_fields(fields: dict[str, str]) -> tuple[str, str, str, str, str, str, str, str] | str:
     title = fields.get("title", "").strip()
     if not title:
         return "Title is required."
@@ -190,6 +195,14 @@ def create_recipe(fields: dict[str, str]) -> str | None:
     status = fields.get("status", "Experiment").strip() or "Experiment"
     color = fields.get("color", "").strip()
     rating = fields.get("rating", "").strip()
+    return title, category, summary, ingredients, tags, status, color, rating
+
+
+def create_recipe(fields: dict[str, str]) -> str | None:
+    values = recipe_fields(fields)
+    if isinstance(values, str):
+        return values
+    title, category, summary, ingredients, tags, status, color, rating = values
     now = datetime.now(timezone.utc).isoformat()
     try:
         with connect() as con:
@@ -201,6 +214,29 @@ def create_recipe(fields: dict[str, str]) -> str | None:
                 """,
                 (title, category, summary, ingredients, tags, status, color, rating, now, now),
             )
+    except sqlite3.IntegrityError:
+        return "A recipe with that title already exists."
+    return None
+
+
+def update_recipe(recipe_id: int, fields: dict[str, str]) -> str | None:
+    values = recipe_fields(fields)
+    if isinstance(values, str):
+        return values
+    title, category, summary, ingredients, tags, status, color, rating = values
+    now = datetime.now(timezone.utc).isoformat()
+    try:
+        with connect() as con:
+            cur = con.execute(
+                """
+                UPDATE recipes
+                SET title = ?, category = ?, summary = ?, ingredients = ?, tags = ?, status = ?, color = ?, rating = ?, updated_at = ?
+                WHERE id = ?
+                """,
+                (title, category, summary, ingredients, tags, status, color, rating, now, recipe_id),
+            )
+            if cur.rowcount == 0:
+                return "Recipe not found."
     except sqlite3.IntegrityError:
         return "A recipe with that title already exists."
     return None
@@ -221,7 +257,7 @@ def render_recipe_card(recipe: sqlite3.Row) -> str:
     color = esc(recipe["color"])
     searchable = esc(" ".join([recipe["title"], recipe["category"], recipe["summary"], recipe["ingredients"], recipe["tags"], recipe["status"]]).lower())
     return f"""
-      <article class="recipe-card" data-recipe-card data-search="{searchable}">
+      <a class="recipe-card" href="/recipes/{recipe['id']}" data-recipe-card data-search="{searchable}">
         <div class="thumb {color}"></div>
         <div class="recipe-card-body">
           <h3>{esc(recipe['title'])}</h3>
@@ -229,8 +265,108 @@ def render_recipe_card(recipe: sqlite3.Row) -> str:
           {ingredient_html}
           <div class="card-meta">{pill_html}</div>
         </div>
-      </article>
+      </a>
     """
+
+
+def recipe_detail_page(username: str, recipe: sqlite3.Row) -> bytes:
+    tags = [t.strip() for t in str(recipe["tags"] or "").split(",") if t.strip()]
+    pills = [recipe["category"], recipe["status"]] + tags
+    if recipe["rating"]:
+        pills.insert(0, f"★ {recipe['rating']}")
+    pill_html = "".join(f'<span class="mini-pill">{esc(p)}</span>' for p in pills if p)
+    ingredient_lines = [line.strip() for line in str(recipe["ingredients"] or "").splitlines() if line.strip()]
+    ingredient_html = "".join(f"<li>{esc(line)}</li>" for line in ingredient_lines) or "<li>No ingredients recorded yet.</li>"
+    summary = esc(recipe["summary"]) or "No full description recorded yet."
+    color = esc(recipe["color"])
+    html_doc = f"""<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{esc(recipe['title'])} · Home Recipes</title>
+  <style>{CSS}</style>
+</head>
+<body>
+  <header class="shell">
+    <a class="brand" href="/" aria-label="Home Recipes home"><span class="mark">✦</span><span>Home Recipes</span></a>
+    <nav><a href="/#library">Library</a><a href="/#ingredients">Ingredients</a><a href="/#add">Add recipe</a><span class="nav-user">{esc(username)}</span><a href="/logout">Log out</a></nav>
+  </header>
+  <main class="shell">
+    <section class="recipe-detail">
+      <a class="back-link" href="/#library">← Back to recipes</a>
+      <div class="detail-hero">
+        <div>
+          <div class="card-meta">{pill_html}</div>
+          <h1>{esc(recipe['title'])}</h1>
+          <p class="detail-summary">{summary}</p>
+          <div class="actions"><a class="button primary" href="/recipes/{recipe['id']}/edit">Edit recipe</a><a class="button secondary" href="/#library">Back to library</a></div>
+        </div>
+        <div class="detail-photo thumb {color}"></div>
+      </div>
+      <div class="detail-grid">
+        <article class="detail-panel">
+          <h2>Full description</h2>
+          <p>{summary}</p>
+        </article>
+        <article class="detail-panel">
+          <h2>Ingredients / product references</h2>
+          <ul class="detail-ingredients">{ingredient_html}</ul>
+        </article>
+      </div>
+    </section>
+  </main>
+  <footer class="shell">Home Recipes · a private kitchen notebook for recipes, products, photos, and results.</footer>
+</body>
+</html>"""
+    return html_doc.encode("utf-8")
+
+
+def option(value: str, label: str, current: str) -> str:
+    selected = " selected" if value == current else ""
+    return f'<option value="{esc(value)}"{selected}>{esc(label)}</option>'
+
+
+def edit_recipe_page(username: str, recipe: sqlite3.Row, message: str = "") -> bytes:
+    notice = f'<p class="notice">{esc(message)}</p>' if message else ""
+    status_options = "".join(option(v, v, recipe["status"]) for v in ["Experiment", "Best version", "Needs tweak", "Favorite"])
+    color_options = "".join(option(v, label, recipe["color"]) for v, label in [("", "Neutral"), ("chocolate", "Chocolate"), ("pistachio", "Pistachio"), ("banana", "Banana"), ("yogurt", "Yogurt")])
+    html_doc = f"""<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Edit {esc(recipe['title'])} · Home Recipes</title>
+  <style>{CSS}</style>
+</head>
+<body>
+  <header class="shell">
+    <a class="brand" href="/" aria-label="Home Recipes home"><span class="mark">✦</span><span>Home Recipes</span></a>
+    <nav><a href="/#library">Library</a><span class="nav-user">{esc(username)}</span><a href="/logout">Log out</a></nav>
+  </header>
+  <main class="shell">
+    <section class="section">
+      <a class="back-link" href="/recipes/{recipe['id']}">← Back to recipe</a>
+      <div class="section-head"><h2>Edit recipe.</h2><p class="sub">Update the family recipe description, ingredients, rating, and status.</p></div>
+      <form class="form-card" method="post" action="/recipes/{recipe['id']}/edit">
+        <div class="form-grid">
+          <label>Title<input name="title" required value="{esc(recipe['title'])}" /></label>
+          <label>Category<input name="category" value="{esc(recipe['category'])}" /></label>
+          <label class="full">Summary<textarea name="summary">{esc(recipe['summary'])}</textarea></label>
+          <label class="full">Ingredient references / quantities<textarea name="ingredients">{esc(recipe['ingredients'])}</textarea></label>
+          <label>Tags<input name="tags" value="{esc(recipe['tags'])}" /></label>
+          <label>Status<select name="status">{status_options}</select></label>
+          <label>Rating<input name="rating" value="{esc(recipe['rating'])}" /></label>
+          <label>Color<select name="color">{color_options}</select></label>
+        </div>
+        <div class="actions"><button class="primary" type="submit">Save changes</button><a class="button secondary" href="/recipes/{recipe['id']}">Cancel</a></div>
+        {notice}
+      </form>
+    </section>
+  </main>
+</body>
+</html>"""
+    return html_doc.encode("utf-8")
 
 
 def page(username: str, message: str = "") -> bytes:
@@ -376,6 +512,21 @@ def login_page(message: str = "") -> bytes:
     return html_doc.encode("utf-8")
 
 
+def parse_recipe_path(path: str) -> tuple[int, str] | None:
+    parts = path.strip("/").split("/")
+    if len(parts) == 2 and parts[0] == "recipes":
+        try:
+            return int(parts[1]), "detail"
+        except ValueError:
+            return None
+    if len(parts) == 3 and parts[0] == "recipes" and parts[2] == "edit":
+        try:
+            return int(parts[1]), "edit"
+        except ValueError:
+            return None
+    return None
+
+
 class Handler(BaseHTTPRequestHandler):
     def send_html(self, body: bytes, status: int = 200, extra_headers: dict[str, str] | None = None, include_body: bool = True) -> None:
         self.send_response(status)
@@ -406,12 +557,22 @@ class Handler(BaseHTTPRequestHandler):
         if parsed.path == "/login":
             self.send_html(login_page(), include_body=False)
             return
-        if parsed.path != "/":
-            self.send_error(404)
-            return
         username = current_user(self.headers)
         if not username:
             self.redirect("/login")
+            return
+        recipe_route = parse_recipe_path(parsed.path)
+        if recipe_route:
+            recipe_id, action = recipe_route
+            recipe = get_recipe(recipe_id)
+            if not recipe:
+                self.send_error(404)
+                return
+            body = edit_recipe_page(username, recipe) if action == "edit" else recipe_detail_page(username, recipe)
+            self.send_html(body, include_body=False)
+            return
+        if parsed.path != "/":
+            self.send_error(404)
             return
         self.send_html(page(username), include_body=False)
 
@@ -426,11 +587,21 @@ class Handler(BaseHTTPRequestHandler):
         if parsed.path == "/logout":
             self.redirect("/login", {"Set-Cookie": clear_session_cookie()})
             return
-        if parsed.path != "/":
-            self.send_error(404)
-            return
         username = self.require_user()
         if not username:
+            return
+        recipe_route = parse_recipe_path(parsed.path)
+        if recipe_route:
+            recipe_id, action = recipe_route
+            recipe = get_recipe(recipe_id)
+            if not recipe:
+                self.send_error(404)
+                return
+            body = edit_recipe_page(username, recipe) if action == "edit" else recipe_detail_page(username, recipe)
+            self.send_html(body)
+            return
+        if parsed.path != "/":
+            self.send_error(404)
             return
         self.send_html(page(username))
 
@@ -448,11 +619,24 @@ class Handler(BaseHTTPRequestHandler):
             self.redirect("/", {"Set-Cookie": make_session_cookie(username)})
             return
 
-        if parsed.path != "/recipes":
-            self.send_error(404)
-            return
         username = self.require_user()
         if not username:
+            return
+        recipe_route = parse_recipe_path(parsed.path)
+        if recipe_route and recipe_route[1] == "edit":
+            recipe_id = recipe_route[0]
+            error = update_recipe(recipe_id, fields)
+            if error:
+                recipe = get_recipe(recipe_id)
+                if not recipe:
+                    self.send_error(404)
+                    return
+                self.send_html(edit_recipe_page(username, recipe, error), status=400)
+                return
+            self.redirect(f"/recipes/{recipe_id}")
+            return
+        if parsed.path != "/recipes":
+            self.send_error(404)
             return
         error = create_recipe(fields)
         if error:
