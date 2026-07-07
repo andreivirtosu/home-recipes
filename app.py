@@ -29,6 +29,24 @@ ACCOUNTS = {
     "andrei": "andrei",
 }
 
+RICH_CHOCOLATE_DESCRIPTION = """Rich Häagen-Dazs-style chocolate ice cream adapted for the CubeItaly 750 ml machine. Make one 1200 g aged base, then churn as two separate 600 g batches so the machine is not overloaded.
+
+Target: premium, dense, adult chocolate; high chocolate intensity but less pasty than the original high-SMP version. Total base is about 1200 g: 2 x 600 g churns.
+
+Steps:
+1. Dry-mix cocoa powder, sugar, dextrose, skimmed milk powder, salt, and optional guar gum very thoroughly.
+2. Warm the milk to 40-50°C.
+3. Whisk or stick-blend the dry mix into the warm milk gradually so there are no cocoa/SMP lumps.
+4. Heat to 82-85°C while stirring. Hold briefly only long enough to hydrate the powders/stabilizer.
+5. Remove from heat. Add the chopped Callebaut 70.5% chocolate and blend until smooth, glossy, and fully emulsified.
+6. Add the 35% cream while the base is still warm; blend briefly again.
+7. Chill quickly in an ice bath, then refrigerate 8-12 hours.
+8. Before churning, inspect the cold base. Chocolate bases often thicken/gel after aging, so stick-blend cold until smooth.
+9. Weigh 600 g into the CubeItaly and churn. Keep the remaining 600 g fridge-cold while the first batch churns.
+10. Extract to a pre-chilled container, harden in the freezer, then churn the second 600 g portion.
+
+Notes: salt is important for chocolate depth. Keep guar low: chocolate and cocoa already provide body. If the base looks separated or grainy after aging, re-blend; gently rewarm/reblend only if cold blending does not fix it."""
+
 SOURDOUGH_DESCRIPTION = """Based on Maurizio Leo / The Perfect Loaf Simple Weekday Sourdough Bread. Flexible workday schedule, moderate 76% hydration, two loaves.
 
 Schedule:
@@ -43,7 +61,7 @@ Next day — bake straight from fridge at 230°C: 20 min covered/with steam, the
 Notes: make one batch as two loaves. If the dough looks tight after cold proof, give it 30-60 min at room temp while the oven preheats; if already puffy/jiggly, bake straight from the fridge."""
 
 SEED_RECIPES = [
-    ("Rich chocolate ice cream", "Ice cream", "Dense, premium chocolate direction for CubeItaly experiments.", "CubeItaly,chocolate,adult", "Experiment", "chocolate", ""),
+    ("Rich chocolate ice cream", "Ice cream", RICH_CHOCOLATE_DESCRIPTION, "CubeItaly,chocolate,adult,2 batches", "Experiment", "chocolate", ""),
     ("Kid-friendly chocolate gelato", "Gelato", "A softer, family-friendly chocolate profile to compare against richer adult batches.", "CubeItaly,chocolate,kids", "Experiment", "chocolate", ""),
     ("Pistachio Sicilian-style gelato", "Gelato", "The flagship iteration target: clean formula, batch notes, and next tweaks.", "CubeItaly,pistachio,best-version", "Best version", "pistachio", "8.5"),
     ("Adult Greek frozen yogurt", "Frozen yogurt", "Tangy adult profile with texture and sweetness notes to dial in.", "CubeItaly,yogurt,adult", "Experiment", "yogurt", ""),
@@ -72,7 +90,7 @@ def connect() -> sqlite3.Connection:
 def seed_ingredients(title: str) -> str:
     seeds = {
         "Pistachio Sicilian-style gelato": "390g Migros Bio Vollmilch 3.5%\n72g sugar\n24g dextrose\n72g 100% pistachio paste\n0.6g fine sea salt",
-        "Rich chocolate ice cream": "Migros/Coop whole milk\n35% cream\nCacao Barry Extra Brute cocoa\nCallebaut 70.5% chocolate\nDextrose",
+        "Rich chocolate ice cream": "For 2 x 600g CubeItaly batches / ~1200g total base:\n500g cream 35% → 250g per churn\n297g whole milk 3.5% → 148.5g per churn\n130g sugar → 65g per churn\n70g dextrose → 35g per churn\n55g Cacao Barry Extra Brute cocoa powder → 27.5g per churn\n115g Callebaut 70.5% dark chocolate → 57.5g per churn\n30g skimmed milk powder → 15g per churn\n1.5g fine sea salt → 0.75g per churn\nOptional: 0.6-0.8g guar gum total → 0.3-0.4g per churn",
         "Kid-friendly chocolate gelato": "Whole milk\nCream\nCocoa powder\nChocolate\nSugar + dextrose",
         "Adult Greek frozen yogurt": "Fage 5% Greek yogurt\nWhole milk\nCream\nSugar + dextrose\nLemon or salt if needed",
         "Banana milk gelato": "Very ripe banana\nWhole milk\nCream\nSugar + dextrose\nFine sea salt",
