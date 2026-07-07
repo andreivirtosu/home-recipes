@@ -50,18 +50,35 @@ Steps:
 
 Notes: salt is important for chocolate depth. Keep guar low: chocolate and cocoa already provide body. If the base looks separated or grainy after aging, re-blend; gently rewarm/reblend only if cold blending does not fix it."""
 
-SOURDOUGH_DESCRIPTION = """Based on Maurizio Leo / The Perfect Loaf Simple Weekday Sourdough Bread. Flexible workday schedule, moderate 76% hydration, two loaves.
+SOURDOUGH_DESCRIPTION = """Family sourdough bread formula from the handwritten notes, kept as the current normal recipe. Inspired by The Perfect Loaf simple weekday method, but using the handwritten 40g fridge-starter routine and 70% hydration bake formula.
 
-Schedule:
-7:00 — build 10-hour levain.
-17:00 — mix levain, flour, and most water; rest 20 min.
-17:20 — add salt and reserved water; mix/strengthen about 5 min.
-17:30-21:00 — bulk ferment with 2 stretch-and-fold sets in the first hour.
-21:00 — divide, preshape, bench rest 30 min.
-21:30 — shape and cold proof overnight.
-Next day — bake straight from fridge at 230°C: 20 min covered/with steam, then about 30 min uncovered until deep brown and ~95°C internal. Cool 2 hours before slicing.
+Baker percentages:
+- Total flour: 900g = 100%
+- Total water: 630g = 70%
+- Salt: 16g = 1.8%
+- Starter inoculation: 16g = 1.8%
+- Levain: 180g total = 20% of flour weight
+- Prefermented flour: 82g = 9.1% of total flour
+- Total dough: about 1560g, close to the handwritten ~1554g note depending on starter rounding
 
-Notes: make one batch as two loaves. If the dough looks tight after cold proof, give it 30-60 min at room temp while the oven preheats; if already puffy/jiggly, bake straight from the fridge."""
+Starter maintenance for 2 bakes/week:
+1. Keep 40g starter in the fridge.
+2. For each bake, take 20g out to build the levain.
+3. Refresh the remaining starter: 20g starter + 20g flour + 20g water = 60g.
+4. Let refreshed starter rest at room temperature for 30-60 min.
+5. Put 40g back in the fridge for the next bake. Use/discard the extra 20g as needed.
+
+Method:
+1. Build levain: mix 82g flour + 82g water + 16g starter = 180g levain. Let rise until active, bubbly, and domed.
+2. Autolyse: mix 818g flour + 490g water until no dry flour remains. Rest 30-60 min.
+3. Final mix: add all 180g levain, 50g additional water, and 16g salt. Mix until incorporated and moderately strengthened.
+4. Bulk ferment until airy and expanded, with stretch-and-folds during the first half of bulk. Use the dough condition rather than the clock.
+5. Divide and preshape if making two smaller loaves, or keep as one large loaf if your basket/oven can handle it. Rest 20-30 min.
+6. Shape, place in banneton, then cold proof overnight.
+7. Bake from cold in a hot covered pot or with steam: about 230°C, 20 min covered/with steam, then 25-35 min uncovered until deep brown and about 95°C internal.
+8. Cool at least 2 hours before slicing.
+
+Proofing note: if the cold loaf looks tight/dense, give it 30-60 min at room temperature while the oven preheats. If already puffy/jiggly, bake straight from the fridge."""
 
 SEED_RECIPES = [
     ("Rich chocolate ice cream", "Ice cream", RICH_CHOCOLATE_DESCRIPTION, "CubeItaly,chocolate,adult,2 batches", "Experiment", "chocolate", ""),
@@ -139,7 +156,7 @@ h1{margin:18px 0 14px;font-family:var(--display);font-weight:800;font-size:clamp
 .ingredient-shelf{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.product-card{border:1px solid var(--line);border-radius:16px;background:#fff;padding:16px}.product-kind{display:inline-block;margin-bottom:16px;color:var(--accent-dark);font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.08em}.product-card h3{margin:0 0 8px;color:var(--ink);font-family:var(--display);font-size:19px;line-height:1.22;letter-spacing:-.025em}.product-card p{margin:0 0 14px;color:var(--muted);font-size:14px;line-height:1.48}
 .form-card{border:1px solid var(--line);border-radius:18px;background:#fff;box-shadow:none;padding:20px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}label{display:grid;gap:7px;color:#5f635e;font-size:13px;font-weight:750}input,textarea,select{width:100%;border:1px solid var(--line);background:#fff;border-radius:10px;padding:12px 13px;font:inherit;font-weight:480;color:var(--ink);outline:none}input:focus,textarea:focus,select:focus{border-color:#d7a18f;box-shadow:0 0 0 3px rgba(214,111,85,.13)}textarea{min-height:94px;resize:vertical}.full{grid-column:1/-1}.notice{margin:14px 0 0;color:var(--accent-dark);font-weight:720}
 .feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.feature{border:1px solid var(--line);border-radius:16px;background:#fff;padding:20px;min-height:150px}.feature .icon{font-size:22px;margin-bottom:16px}.feature h3{margin:0 0 8px;font-family:var(--display);font-size:20px;letter-spacing:-.025em;color:var(--ink)}.feature p{margin:0;color:var(--muted);line-height:1.52}
-.recipe-detail{padding:30px 0 56px}.back-link{display:inline-flex;margin:0 0 16px;color:var(--muted);font-weight:700}.detail-hero{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:24px;align-items:stretch;border:1px solid var(--line);border-radius:18px;background:#fff;padding:20px}.detail-hero h1{margin-top:16px}.detail-summary{font-size:17px;line-height:1.65;color:var(--muted);max-width:760px;text-wrap:pretty}.detail-photo{height:auto;min-height:220px;border-radius:14px;overflow:hidden;border:0}.detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}.detail-panel{border:1px solid var(--line);border-radius:16px;background:#fff;padding:20px}.detail-panel h2{margin:0 0 12px;font-family:var(--display);font-size:28px;font-weight:800;letter-spacing:-.03em;color:var(--ink)}.detail-panel p{margin:0;color:var(--text);font-size:16px;line-height:1.7;white-space:pre-wrap}.detail-ingredients{margin:0;padding-left:20px;display:grid;gap:10px;color:var(--text);line-height:1.5}footer{padding:34px 0;color:var(--soft);font-size:14px}
+.recipe-detail{padding:30px 0 56px}.back-link{display:inline-flex;margin:0 0 16px;color:var(--muted);font-weight:700}.detail-hero{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:24px;align-items:stretch;border:1px solid var(--line);border-radius:18px;background:#fff;padding:20px}.detail-hero h1{margin-top:16px}.detail-summary{font-size:17px;line-height:1.65;color:var(--muted);max-width:760px;text-wrap:pretty}.detail-photo{height:auto;min-height:220px;border-radius:14px;overflow:hidden;border:0}.detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}.detail-grid.single{grid-template-columns:1fr}.detail-panel{border:1px solid var(--line);border-radius:16px;background:#fff;padding:20px}.detail-panel h2{margin:0 0 12px;font-family:var(--display);font-size:28px;font-weight:800;letter-spacing:-.03em;color:var(--ink)}.detail-panel p{margin:0;color:var(--text);font-size:16px;line-height:1.7;white-space:pre-wrap}.detail-ingredients{margin:0;padding-left:20px;display:grid;gap:10px;color:var(--text);line-height:1.5}footer{padding:34px 0;color:var(--soft);font-size:14px}
 @media(max-width:900px){
   body{overflow-x:hidden}
   .shell{width:min(100% - 28px,1080px)}
@@ -192,7 +209,7 @@ def seed_ingredients(title: str) -> str:
         "Kid-friendly chocolate gelato": "Whole milk\nCream\nCocoa powder\nChocolate\nSugar + dextrose",
         "Adult Greek frozen yogurt": "Fage 5% Greek yogurt\nWhole milk\nCream\nSugar + dextrose\nLemon or salt if needed",
         "Banana milk gelato": "Very ripe banana\nWhole milk\nCream\nSugar + dextrose\nFine sea salt",
-        "Simple weekday sourdough bread": "Levain: 40g bread flour, 40g whole wheat flour, 81g water, 8g ripe starter\nFinal dough: 766g bread flour, 161g whole wheat flour, 635g water for autolyse, all 169g levain\nMix: 50g reserved water as needed, 19g fine sea salt\nTotal formula: 806g bread flour, 202g whole wheat flour, 766g water, 19g salt, 8g starter\nYield: 2 loaves, 1800g total dough, 76% hydration, 8% pre-fermented flour",
+        "Simple weekday sourdough bread": "Starter maintenance: keep 40g starter in fridge; take 20g out for levain; refresh remaining 20g starter + 20g flour + 20g water = 60g; rest 30-60 min; return 40g to fridge\nLevain: 82g flour + 82g water + 16g starter = 180g\nAutolyse: 818g flour + 490g water\nFinal mix: all 180g levain + 50g water + 16g salt\nTotal formula: 900g flour, 630g water, 16g salt, 16g starter\nBaker percentages: 70% hydration, 1.8% salt, 9.1% prefermented flour\nYield: about 1560g total dough",
     }
     return seeds.get(title, "")
 
@@ -404,6 +421,16 @@ def preview_text(value: object, limit: int = 180) -> str:
     return text[: limit - 1].rstrip() + "…"
 
 
+def intro_text(value: object, limit: int = 260) -> str:
+    raw = str(value or "").strip()
+    first_paragraph = raw.split("\n\n", 1)[0].strip()
+    return preview_text(first_paragraph, limit)
+
+
+def normalized_text(value: object) -> str:
+    return " ".join(str(value or "").split())
+
+
 def render_recipe_card(recipe: sqlite3.Row) -> str:
     tags = [t.strip() for t in str(recipe["tags"] or "").split(",") if t.strip()]
     pills = [recipe["category"], recipe["status"]] + tags[:2]
@@ -441,8 +468,17 @@ def recipe_detail_page(username: str, recipe: sqlite3.Row) -> bytes:
     pill_html = "".join(f'<span class="mini-pill">{esc(p)}</span>' for p in pills if p)
     ingredient_lines = [line.strip() for line in str(recipe["ingredients"] or "").splitlines() if line.strip()]
     ingredient_html = "".join(f"<li>{esc(line)}</li>" for line in ingredient_lines) or "<li>No ingredients recorded yet.</li>"
-    summary = esc(recipe["summary"]) or "No full description recorded yet."
-    hero_summary = esc(preview_text(recipe["summary"], 320)) or "No full description recorded yet."
+    summary_plain = str(recipe["summary"] or "").strip()
+    hero_summary_plain = intro_text(summary_plain, 260)
+    hero_summary = esc(hero_summary_plain) or "No short description recorded yet."
+    full_description = ""
+    if summary_plain and normalized_text(summary_plain) != normalized_text(hero_summary_plain):
+        full_description = f"""
+        <article class="detail-panel">
+          <h2>Full description</h2>
+          <p>{esc(summary_plain)}</p>
+        </article>"""
+    grid_class = "" if full_description else " single"
     color = esc(recipe["color"])
     photo = esc(recipe["cover_photo"] if "cover_photo" in recipe.keys() else "")
     detail_photo = f'<div class="detail-photo thumb photo-thumb"><img src="{photo}" alt="{esc(recipe["title"])} photo" /></div>' if photo else f'<div class="detail-photo thumb {color}"></div>'
@@ -471,11 +507,8 @@ def recipe_detail_page(username: str, recipe: sqlite3.Row) -> bytes:
         </div>
         {detail_photo}
       </div>
-      <div class="detail-grid">
-        <article class="detail-panel">
-          <h2>Full description</h2>
-          <p>{summary}</p>
-        </article>
+      <div class="detail-grid{grid_class}">
+        {full_description}
         <article class="detail-panel">
           <h2>Ingredients / product references</h2>
           <ul class="detail-ingredients">{ingredient_html}</ul>
