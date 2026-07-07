@@ -318,6 +318,7 @@ def recipe_detail_page(username: str, recipe: sqlite3.Row) -> bytes:
     ingredient_lines = [line.strip() for line in str(recipe["ingredients"] or "").splitlines() if line.strip()]
     ingredient_html = "".join(f"<li>{esc(line)}</li>" for line in ingredient_lines) or "<li>No ingredients recorded yet.</li>"
     summary = esc(recipe["summary"]) or "No full description recorded yet."
+    hero_summary = esc(preview_text(recipe["summary"], 320)) or "No full description recorded yet."
     color = esc(recipe["color"])
     html_doc = f"""<!doctype html>
 <html lang="en">
@@ -339,7 +340,7 @@ def recipe_detail_page(username: str, recipe: sqlite3.Row) -> bytes:
         <div>
           <div class="card-meta">{pill_html}</div>
           <h1>{esc(recipe['title'])}</h1>
-          <p class="detail-summary">{summary}</p>
+          <p class="detail-summary">{hero_summary}</p>
           <div class="actions"><a class="button primary" href="/recipes/{recipe['id']}/edit">Edit recipe</a><a class="button secondary" href="/#library">Back to library</a></div>
         </div>
         <div class="detail-photo thumb {color}"></div>
