@@ -27,7 +27,6 @@ SESSION_SECRET = os.environ.get("HOME_RECIPES_SESSION_SECRET", "dev-home-recipes
 SESSION_MAX_AGE = 60 * 60 * 24 * 30
 ACCOUNTS = {
     "andrei": "andrei",
-    "kalee": "kalee",
 }
 
 SEED_RECIPES = [
@@ -363,7 +362,7 @@ def login_page(message: str = "") -> bytes:
     <section class="login-card">
       <a class="brand" href="/login" aria-label="Home Recipes login"><span class="mark">✦</span><span>Home Recipes</span></a>
       <h1>Welcome back.</h1>
-      <p class="lead">Log in to open the private recipe notebook.</p>
+      <p class="lead">Log in to open the family recipe notebook.</p>
       <form class="login-form" method="post" action="/login">
         <label>Username<input name="username" required autocomplete="username" autofocus /></label>
         <label>Password<input name="password" required type="password" autocomplete="current-password" /></label>
