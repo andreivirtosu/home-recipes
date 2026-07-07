@@ -63,22 +63,44 @@ Baker percentages:
 
 Starter maintenance for 2 bakes/week:
 1. Keep 40g starter in the fridge.
-2. For each bake, take 20g out to build the levain.
+2. In the evening before mixing dough, take/use 20g out for the levain.
 3. Refresh the remaining starter: 20g starter + 20g flour + 20g water = 60g.
 4. Let refreshed starter rest at room temperature for 30-60 min.
 5. Put 40g back in the fridge for the next bake. Use/discard the extra 20g as needed.
 
-Method:
-1. Build levain: mix 82g flour + 82g water + 16g starter = 180g levain. Let rise until active, bubbly, and domed.
-2. Autolyse: mix 818g flour + 490g water until no dry flour remains. Rest 30-60 min.
-3. Final mix: add all 180g levain, 50g additional water, and 16g salt. Mix until incorporated and moderately strengthened.
-4. Bulk ferment until airy and expanded, with stretch-and-folds during the first half of bulk. Use the dough condition rather than the clock.
-5. Divide and preshape if making two smaller loaves, or keep as one large loaf if your basket/oven can handle it. Rest 20-30 min.
-6. Shape, place in banneton, then cold proof overnight.
-7. Bake from cold in a hot covered pot or with steam: about 230°C, 20 min covered/with steam, then 25-35 min uncovered until deep brown and about 95°C internal.
-8. Cool at least 2 hours before slicing.
+Schedule / timeline:
+Evening, day 1 — build levain:
+- Mix 82g flour + 82g water + 16g starter = 180g levain.
+- Leave covered at room temperature overnight.
+- By morning it should be active, bubbly, risen, and ready to use.
 
-Proofing note: if the cold loaf looks tight/dense, give it 30-60 min at room temperature while the oven preheats. If already puffy/jiggly, bake straight from the fridge."""
+Morning, day 2 — mix and make dough:
+- Autolyse 818g flour + 490g water for 30-60 min.
+- Add all 180g ripe levain, 50g additional water, and 16g salt.
+- Mix until incorporated and moderately strengthened.
+
+Day 2, room-temperature fermentation:
+- Bulk ferment / proof at room temperature for about 4-6 hours total, depending on room temperature and dough activity.
+- Do stretch-and-folds during the first half of bulk.
+- Continue until the dough is airy, expanded, and lively, not just until the clock says so.
+
+Day 2, evening — shape and refrigerate:
+- Divide/preshape if making two smaller loaves, or keep as one large loaf if your basket/oven can handle it.
+- Bench rest 20-30 min, shape, place in banneton, then put shaped dough in the fridge.
+
+Day 3 — bake:
+- Bake the following day, straight from the fridge unless it still looks tight/dense.
+- Bake in a hot covered pot or with steam at about 230°C: 20 min covered/with steam, then 25-35 min uncovered until deep brown and about 95°C internal.
+- Cool at least 2 hours before slicing.
+
+Method notes:
+1. Build the levain in the evening and leave it overnight; use it in the morning when active.
+2. Mix/make the dough in the morning.
+3. Expect about 4-6 hours room-temperature bulk/proof before shaping and refrigerating.
+4. Cold proof the shaped dough until the next day.
+5. Bake the following day.
+
+Proofing note: if the cold loaf looks tight/dense on bake day, give it 30-60 min at room temperature while the oven preheats. If already puffy/jiggly, bake straight from the fridge."""
 
 SEED_RECIPES = [
     ("Rich chocolate ice cream", "Ice cream", RICH_CHOCOLATE_DESCRIPTION, "CubeItaly,chocolate,adult,2 batches", "Experiment", "chocolate", ""),
